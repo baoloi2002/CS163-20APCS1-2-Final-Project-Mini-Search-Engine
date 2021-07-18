@@ -1,0 +1,87 @@
+# depslib dependency file v1.0
+1626584547 source:d:\github\cs163-20apcs1-2-final project-mini search engine\mini_search_engine\dataquery.cpp
+	"dataQuery.h"
+
+1626584540 d:\github\cs163-20apcs1-2-final project-mini search engine\mini_search_engine\dataquery.h
+	"SetConsoleCursorPosition.h"
+	<fstream>
+	<vector>
+	<stack>
+	<algorithm>
+	<iostream>
+
+1626367731 d:\github\cs163-20apcs1-2-final project-mini search engine\mini_search_engine\setconsolecursorposition.h
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+
+1626584931 source:d:\github\cs163-20apcs1-2-final project-mini search engine\mini_search_engine\main.cpp
+	<iostream>
+	"dataQuery.h"
+	"readQuery.h"
+	"Header.h"
+
+1626584316 d:\github\cs163-20apcs1-2-final project-mini search engine\mini_search_engine\readquery.h
+	<vector>
+	<conio.h>
+	<windows.h>
+	<iostream>
+	<vector>
+	"SetConsoleCursorPosition.h"
+	<cstdio>
+	<algorithm>
+	"dataQuery.h"
+	"Header.h"
+
+1626574429 d:\github\cs163-20apcs1-2-final project-mini search engine\mini_search_engine\header.h
+	"dataQuery.h"
+
+1626584456 source:d:\github\cs163-20apcs1-2-final project-mini search engine\mini_search_engine\readquery.cpp
+	"readQuery.h"
+
+1626367792 source:d:\github\cs163-20apcs1-2-final project-mini search engine\mini_search_engine\setconsolecursorposition.cpp
+	"SetConsoleCursorPosition.h"
+
+1626584547 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\dataquery.cpp
+	"dataQuery.h"
+
+1626584540 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\dataquery.h
+	"SetConsoleCursorPosition.h"
+	<fstream>
+	<vector>
+	<stack>
+	<algorithm>
+	<iostream>
+
+1626367731 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\setconsolecursorposition.h
+	<stdio.h>
+	<conio.h>
+	<windows.h>
+
+1626584931 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\main.cpp
+	<iostream>
+	"dataQuery.h"
+	"readQuery.h"
+	"Header.h"
+
+1626584316 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.h
+	<vector>
+	<conio.h>
+	<windows.h>
+	<iostream>
+	<vector>
+	"SetConsoleCursorPosition.h"
+	<cstdio>
+	<algorithm>
+	"dataQuery.h"
+	"Header.h"
+
+1626574429 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\header.h
+	"dataQuery.h"
+
+1626584456 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.cpp
+	"readQuery.h"
+
+1626367792 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\setconsolecursorposition.cpp
+	"SetConsoleCursorPosition.h"
+
