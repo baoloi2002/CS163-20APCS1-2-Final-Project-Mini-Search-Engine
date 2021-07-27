@@ -42,7 +42,7 @@ class hashTableNode{
     }
     void save(int pos);
     int getKey(string u);
-    void saveData(string u);
+    void saveDataToFile();
 friend class dataQuery;
 };
 

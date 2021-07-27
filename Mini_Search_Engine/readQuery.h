@@ -18,10 +18,12 @@ using namespace std;
 
 string readQuery(string s);
 vector<string> fromCharsToWord(string u);///Suggest from chars to word
+vector<string> fromWordToWord(string u);///Suggest from word to word
 bool isBackspace(char u);
 bool isEnter(char u);
 bool isSplitChar(char u);
 string getLastChars(string u);
+string getLastWord(string u);
 
 
 #endif // _readQuery

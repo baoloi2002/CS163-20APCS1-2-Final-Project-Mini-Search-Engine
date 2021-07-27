@@ -26,7 +26,7 @@ void dataQuery::insert(const string &u, int pos, dataQueryNode* cur){
     if (pos == int(u.size())){
         int key = hTable.getKey(u);
         ++hTable.cnt[key];
-        hTable.save(key);
+        //hTable.save(key);
         cur->best.push_back(mp(hTable.cnt[key], key));
         cur->buildBest();
         return ;
@@ -63,6 +63,7 @@ void dataQuery::saveData(string u){
 
 void dataQuery::addData(string u){
     splitString(u);
+    hTable.saveDataToFile();
 }
 
 vector<string> dataQuery::getBestResult(string u){
@@ -117,7 +118,7 @@ void dataQuery::build(const string &u, int pos, dataQueryNode* cur){
     cur->buildBest();
 }
 
-void hashTableNode::save(int pos){
+void hashTableNode::saveDataToFile(){
     ofstream fo;
     fo.open("dataQuery/CountWord.dat",ios::binary);
     fo.write((char*)cnt, sizeof(int)*Nmax);
@@ -133,10 +134,6 @@ int hashTableNode::getKey(string u){
     if (val[key] == "")
         val[key] = u;
     return key;
-}
-
-void hashTableNode::saveData(string u){
-    save(getKey(u));
 }
 
 bool cmpSeFi(const pair<int,int>& u, const pair<int,int>& v){

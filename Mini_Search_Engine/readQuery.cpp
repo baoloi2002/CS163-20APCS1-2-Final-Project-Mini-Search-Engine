@@ -40,6 +40,13 @@ string readQuery(string s){
                 gotoXY(X+9, Y+i+1);
                 cout << suggest[i];
             }
+        }else
+        if (!s.empty()){
+            vector<string> suggest = fromWordToWord(getLastWord(s));
+            for (int i=0, ii=suggest.size(); i<ii; ++i){
+                gotoXY(X+9, Y+i+1);
+                cout << suggest[i];
+            }
         }
 
         gotoXY(X+9, Y);
@@ -58,9 +65,25 @@ vector<string> fromCharsToWord(string u){
     vector<string> a = dtQuery.getBestResult(u);
     return a;
 }
+vector<string> fromWordToWord(string u){
+    vector<string> a;
+    a.pb(u + " (Too Lazy to finish - Loi)");
+    return a;
+}
 
 string getLastChars(string u){
     string s = "";
+    while(!u.empty() && !isSplitChar(u.back())){
+        s.pb(u.back());
+        u.pop_back();
+    }
+    reverse(s.begin(), s.end());
+    return s;
+}
+
+string getLastWord(string u){
+    string s = "";
+    while(!u.empty() && isSplitChar(u.back())) u.pop_back();
     while(!u.empty() && !isSplitChar(u.back())){
         s.pb(u.back());
         u.pop_back();

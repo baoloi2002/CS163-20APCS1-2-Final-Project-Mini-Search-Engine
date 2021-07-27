@@ -42,10 +42,10 @@
 1626367792 source:d:\github\cs163-20apcs1-2-final project-mini search engine\mini_search_engine\setconsolecursorposition.cpp
 	"SetConsoleCursorPosition.h"
 
-1626584547 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\dataquery.cpp
+1627385805 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\dataquery.cpp
 	"dataQuery.h"
 
-1626584540 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\dataquery.h
+1627385743 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\dataquery.h
 	"SetConsoleCursorPosition.h"
 	<fstream>
 	<vector>
@@ -64,7 +64,7 @@
 	"readQuery.h"
 	"Header.h"
 
-1626584316 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.h
+1627386699 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.h
 	<vector>
 	<conio.h>
 	<windows.h>
@@ -79,9 +79,21 @@
 1626574429 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\header.h
 	"dataQuery.h"
 
-1626584456 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.cpp
+1627387247 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.cpp
 	"readQuery.h"
 
 1626367792 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\setconsolecursorposition.cpp
 	"SetConsoleCursorPosition.h"
+
+1627121908 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\synonym.cpp
+	"synonym.h"
+
+1627385693 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\synonym.h
+	<list>
+	<iostream>
+
+1627386946 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\wordtoword.cpp
+	"WordToWord.h"
+
+1627387086 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\wordtoword.h
 

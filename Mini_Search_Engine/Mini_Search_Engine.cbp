@@ -35,13 +35,18 @@
 		<Unit filename="Header.h" />
 		<Unit filename="SetConsoleCursorPosition.cpp" />
 		<Unit filename="SetConsoleCursorPosition.h" />
+		<Unit filename="WordToWord.cpp" />
+		<Unit filename="WordToWord.h" />
 		<Unit filename="dataQuery.cpp" />
 		<Unit filename="dataQuery.h" />
 		<Unit filename="dataQuery/CountWord.dat" />
+		<Unit filename="dataQuery/WordToWord.txt" />
 		<Unit filename="dataQuery/Words.txt" />
 		<Unit filename="main.cpp" />
 		<Unit filename="readQuery.cpp" />
 		<Unit filename="readQuery.h" />
+		<Unit filename="synonym.cpp" />
+		<Unit filename="synonym.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
