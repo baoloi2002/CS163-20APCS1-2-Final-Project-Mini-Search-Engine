@@ -12,6 +12,7 @@
 #include <algorithm>
 #include "dataQuery.h"
 #include "Header.h"
+#include "WordToWord.h"
 
 
 using namespace std;

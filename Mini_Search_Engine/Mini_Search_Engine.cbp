@@ -40,7 +40,6 @@
 		<Unit filename="dataQuery.cpp" />
 		<Unit filename="dataQuery.h" />
 		<Unit filename="dataQuery/CountWord.dat" />
-		<Unit filename="dataQuery/WordToWord.txt" />
 		<Unit filename="dataQuery/Words.txt" />
 		<Unit filename="main.cpp" />
 		<Unit filename="readQuery.cpp" />

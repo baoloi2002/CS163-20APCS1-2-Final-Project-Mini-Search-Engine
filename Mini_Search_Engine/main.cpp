@@ -9,6 +9,7 @@ CS163
 using namespace std;
 
 dataQuery dtQuery;
+WTWSuggest wtwSuggest;
 
 int main()
 {

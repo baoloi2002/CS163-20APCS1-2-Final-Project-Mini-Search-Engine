@@ -57,7 +57,7 @@ string readQuery(string s){
 
     /// add to Query data
     dtQuery.addData(s);
-
+    wtwSuggest.addData(s);
     return s;
 }
 
@@ -66,9 +66,10 @@ vector<string> fromCharsToWord(string u){
     return a;
 }
 vector<string> fromWordToWord(string u){
-    vector<string> a;
-    a.pb(u + " (Too Lazy to finish - Loi)");
-    return a;
+    vector<string> res;
+    if (u == "")
+        return res;
+    return wtwSuggest.get(u);
 }
 
 string getLastChars(string u){

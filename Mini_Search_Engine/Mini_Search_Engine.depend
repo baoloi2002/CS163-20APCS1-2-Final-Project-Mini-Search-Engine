@@ -58,13 +58,13 @@
 	<conio.h>
 	<windows.h>
 
-1626584931 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\main.cpp
+1627544696 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\main.cpp
 	<iostream>
 	"dataQuery.h"
 	"readQuery.h"
 	"Header.h"
 
-1627386699 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.h
+1627544117 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.h
 	<vector>
 	<conio.h>
 	<windows.h>
@@ -75,11 +75,13 @@
 	<algorithm>
 	"dataQuery.h"
 	"Header.h"
+	"WordToWord.h"
 
-1626574429 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\header.h
+1627544685 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\header.h
 	"dataQuery.h"
+	"WordToWord.h"
 
-1627387247 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.cpp
+1627544706 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.cpp
 	"readQuery.h"
 
 1626367792 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\setconsolecursorposition.cpp
@@ -92,8 +94,11 @@
 	<list>
 	<iostream>
 
-1627386946 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\wordtoword.cpp
+1627544472 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\wordtoword.cpp
 	"WordToWord.h"
 
-1627387086 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\wordtoword.h
+1627544510 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\wordtoword.h
+	<vector>
+	<iostream>
+	<fstream>
 
