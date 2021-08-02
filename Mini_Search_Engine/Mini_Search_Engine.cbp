@@ -44,8 +44,11 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="readQuery.cpp" />
 		<Unit filename="readQuery.h" />
-		<Unit filename="synonym.cpp" />
-		<Unit filename="synonym.h" />
+		<Unit filename="removeStopWords.cpp" />
+		<Unit filename="removeStopWords.h" />
+		<Unit filename="stopWord/stopword.txt" />
+		<Unit filename="typeOfQuestion.cpp" />
+		<Unit filename="typeOfQuestion.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

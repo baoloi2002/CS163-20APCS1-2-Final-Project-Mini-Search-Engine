@@ -5,10 +5,10 @@ string readQuery(string s){
     const int X = 0;
     const int Y = 0;
 
-    const string whiteSpaces = "                                                                                        ";
+    const string whiteSpaces = "                                                                   ";
 
     gotoXY(X, Y);
-    cout << "Google : ";
+    cout << "Google :                                                         ";
     gotoXY(X, Y+1);
     cout << "Suggest: ";
     gotoXY(X+9, Y);

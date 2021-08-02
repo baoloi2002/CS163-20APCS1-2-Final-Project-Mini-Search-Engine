@@ -58,11 +58,13 @@
 	<conio.h>
 	<windows.h>
 
-1627544696 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\main.cpp
+1627893811 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\main.cpp
 	<iostream>
 	"dataQuery.h"
 	"readQuery.h"
 	"Header.h"
+	"removeStopWords.h"
+	"typeOfQuestion.h"
 
 1627544117 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.h
 	<vector>
@@ -77,11 +79,12 @@
 	"Header.h"
 	"WordToWord.h"
 
-1627544685 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\header.h
+1627892861 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\header.h
 	"dataQuery.h"
 	"WordToWord.h"
+	"removeStopWords.h"
 
-1627544706 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.cpp
+1627891113 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.cpp
 	"readQuery.h"
 
 1626367792 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\setconsolecursorposition.cpp
@@ -101,4 +104,82 @@
 	<vector>
 	<iostream>
 	<fstream>
+
+1627889127 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\map.h
+	<iostream>
+
+1627890901 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\stopwords.h
+	<vector>
+	<fstream>
+
+1627892152 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\stopwords.cpp
+	"stopWords.h"
+
+1627891895 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\typeofquestion.cpp
+	"typeOfQuestion.h"
+
+1627891916 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\typeofquestion.h
+	<iostream>
+
+1627847778 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\trie.h
+
+1627886151 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\inputdataoffiles.cpp
+	<bits/stdc++.h>
+
+1627848527 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\inputdataofsynonym.cpp
+	<bits/stdc++.h>
+
+1627886284 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\history.cpp
+	<bits/stdc++.h>
+	<conio.h>
+	<windows.h>
+	<winuser.h>
+
+1627868948 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\solution01.cpp
+	<bits/stdc++.h>
+
+1627868954 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\solution02.cpp
+	<bits/stdc++.h>
+
+1627868667 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\solution03.cpp
+	<bits/stdc++.h>
+
+1627868936 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\solution04.cpp
+	<bits/stdc++.h>
+
+1627868926 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\solution05.cpp
+	<bits/stdc++.h>
+
+1627566764 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\solution06.cpp
+
+1627868918 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\solution07.cpp
+	<bits/stdc++.h>
+
+1627868907 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\solution08.cpp
+	<bits/stdc++.h>
+
+1627868875 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\solution09.cpp
+	<bits/stdc++.h>
+
+1627868898 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\solution10.cpp
+	<bits/stdc++.h>
+
+1627892653 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\solution11.cpp
+	<bits/stdc++.h>
+
+1627863608 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\solution12.cpp
+	<bits/stdc++.h>
+
+1627890901 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\removestopwords.h
+	<vector>
+	<fstream>
+
+1627892855 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\removestopwords.cpp
+	"removeStopWords.h"
+
+1627892994 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\stopwords.cpp
+	<bits/stdc++.h>
+
+1627868643 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\solution13.cpp
+	<bits/stdc++.h>
 
