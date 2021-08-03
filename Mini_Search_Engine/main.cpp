@@ -65,7 +65,6 @@ int main(){
             mainData.NormalFind(s);
         }else
         if (context == 9 || context == 10){
-            /// 50 %
             mainData.WildcardFind(s);
         }else
         if (context == 11){

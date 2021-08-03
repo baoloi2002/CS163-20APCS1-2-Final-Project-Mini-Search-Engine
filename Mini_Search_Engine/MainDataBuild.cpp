@@ -430,24 +430,110 @@ void MainDataBuild::WildcardFind(string s){
             if (res.empty())
                 res = trieMainData.find(query[i][j]);
             else
-                res = mergeRes(res, trieMainData.find(query[i][j]));
+                res = andRes(res, trieMainData.find(query[i][j]));
         }
     }
+    for (int i=0, ii=res.size(); i<ii; ++i)
+        swap(res[i].fi, res[i].se);
+    sort(res.begin(), res.end(), greater<pair<int,int> >());
+    /// Check is sequence appear
+    int cnt = 0;
+    int n = query.size();
+    for (int z=0, zz=res.size(); z<zz; ++z){
+        string address = "Search Engine-Data/" + validFile[res[z].se];
+        bool isOk = true;
 
-    priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > q;
-    for (int i=0, ii = res.size(); i<ii; ++i){
-        q.push(mp(res[i].se, res[i].fi));
-        if (q.size() > 5)
-            q.pop();
+        ifstream fi;
+        fi.open(address);
+        vector<string> fileData;
+        vector<string> rawData;
+        vector<bool> isHighlight;
+        string u = "";
+        while(fi>>u && u!=""){
+            rawData.pb(u);
+            isHighlight.pb(false);
+            u=stWords.removeStopWords(optimizeStr(u));
+            if (u!=""){
+                fileData.pb(u);
+            }
+            u = "";
+        }
+        fi.close();
+
+        vector<vector<int> > pos(n);
+
+        for (int i=0, ii=fileData.size(); i<ii; ++i){
+            for (int j=0; j<n; ++j)
+            if (i + int(query[j].size())-1 < ii){
+                bool isDiff = false;
+                for (int k=0, kk=query[j].size(); k<kk; ++k)
+                if (query[j][k] != fileData[i+k]){
+                    isDiff = true;
+                    break;
+                }
+                if (!isDiff)
+                    pos[j].pb(i);
+            }
+        }
+
+        for (int i=0; i<n; ++i)
+        if (pos[i].empty()){
+            isOk = false;
+            break;
+        }
+
+        if (isOk){
+            for (int i=0; i<n; ++i){
+                for (int j=0, jj=pos[i].size(); j<jj; ++j){
+                    int g = pos[i][j], len = int(query[i].size());
+                    for (int k=g; ; ++k)
+                    if (optimizeStr(rawData[k]) == query[i][0]){
+                        isHighlight[k] = true;
+                        if (len == 1) break;
+                        ++k;
+                        --len;
+                        do{
+                            for (;optimizeStr(rawData[k]) != query[i].back(); ++k, --len)
+                                isHighlight[k] = true;
+                            --len;
+                        }while(len>0);
+                        isHighlight[k] = true;
+                        break;
+                    }
+                }
+            }
+
+            int id = -1, best = -1, s = 0;
+            for (int i = 0, ii=rawData.size(); i<ii; ++i){
+                if (isHighlight[i]) ++s;
+                if (i-50>=0 && isHighlight[i-50]) --s;
+                if (s >= best){
+                    best = s;
+                    id = i;
+                }
+            }
+
+            cout << "*****  " << validFile[res[z].se] << "  *****" << endl;
+            for (int i=max(0, id-50); i<=id; ++i){
+                if (isHighlight[i])
+                    ChangeTextColor(240);
+                else
+                    ChangeTextColor(15);
+                cout << rawData[i] << ' ';
+            }
+            ChangeTextColor(15);
+            cout << endl;
+
+            ++cnt;
+            if (cnt == 5) break;
+        }
+    }
+    if (cnt == 0){
+        cout << "Nothing HERE !!!!" << endl;
     }
 
-    vector<int> ans;
-    while(!q.empty()){
-        ans.pb(q.top().se);
-        q.pop();
-    }
-    display(ans, originalStr);
 }
+
 
 /// Minus find
 void MainDataBuild::MinusFind(string query){

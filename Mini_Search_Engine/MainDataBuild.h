@@ -88,6 +88,9 @@ public:
     void displayWithTitleCheck(vector<int> file, vector<string> query);
 
     int hashingStr(string u);
+
+    bool cmpSF(const pair<int,int>& u, const pair<int,int>& v);
+
 };
 
 #endif // _MainDataBuild_
