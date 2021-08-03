@@ -35,6 +35,8 @@
 		<Unit filename="Header.h" />
 		<Unit filename="SetConsoleCursorPosition.cpp" />
 		<Unit filename="SetConsoleCursorPosition.h" />
+		<Unit filename="Synonym.cpp" />
+		<Unit filename="Synonym.h" />
 		<Unit filename="WordToWord.cpp" />
 		<Unit filename="WordToWord.h" />
 		<Unit filename="dataQuery.cpp" />

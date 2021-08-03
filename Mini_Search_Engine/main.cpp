@@ -2,17 +2,22 @@
 CS163
 */
 #include <iostream>
-#include "dataQuery.h"
-#include "readQuery.h"
-#include "Header.h"
-#include "removeStopWords.h"
-#include "typeOfQuestion.h"
+#include "Header.h" /// Header
+#include "dataQuery.h" ///  Trie + hashTable
+#include "readQuery.h" /// dataQuery + WordToWord + SetConsoleCursorPosition
+#include "SetConsoleCursorPosition.h" /// ...
+#include "WordToWord.h" /// file
+#include "removeStopWords.h" /// Trie
+#include "typeOfQuestion.h" /// ???
+#include "Synonym.h" /// ???
 
 using namespace std;
 
 dataQuery dtQuery;
 WTWSuggest wtwSuggest;
 StopWords stWords;
+Synonym synData;
+
 
 int main(){
 

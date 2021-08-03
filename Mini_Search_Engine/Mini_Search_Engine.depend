@@ -58,13 +58,16 @@
 	<conio.h>
 	<windows.h>
 
-1627893811 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\main.cpp
+1627958669 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\main.cpp
 	<iostream>
+	"Header.h"
 	"dataQuery.h"
 	"readQuery.h"
-	"Header.h"
+	"SetConsoleCursorPosition.h"
+	"WordToWord.h"
 	"removeStopWords.h"
 	"typeOfQuestion.h"
+	"Synonym.h"
 
 1627544117 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.h
 	<vector>
@@ -79,9 +82,10 @@
 	"Header.h"
 	"WordToWord.h"
 
-1627892861 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\header.h
+1627958674 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\header.h
 	"dataQuery.h"
 	"WordToWord.h"
+	"Synonym.h"
 	"removeStopWords.h"
 
 1627891113 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.cpp
@@ -90,12 +94,13 @@
 1626367792 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\setconsolecursorposition.cpp
 	"SetConsoleCursorPosition.h"
 
-1627121908 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\synonym.cpp
-	"synonym.h"
+1627959267 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\synonym.cpp
+	"Synonym.h"
 
-1627385693 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\synonym.h
-	<list>
+1627959134 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\synonym.h
 	<iostream>
+	<vector>
+	<fstream>
 
 1627544472 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\wordtoword.cpp
 	"WordToWord.h"
