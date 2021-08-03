@@ -60,6 +60,8 @@ public:
     /// Normal find
     void NormalFind(string query);
 
+    void SynonymFind(string query);
+
     vector<string> splitString(string u);
 
     vector<pair<int,int> > mergeRes(vector<pair<int,int> > u, vector<pair<int,int> > v);

@@ -126,7 +126,8 @@ bool MainDataBuild::isValidChar(char u){
 
 ///Normal find
 
-void MainDataBuild::NormalFind(string query){
+void MainDataBuild::NormalFind(string s){
+    string query = stWords.removeStopWords(s);
     vector<string> listStr = splitString(query);
     vector<pair<int, int> > tmp;
     for (int i=0, ii=listStr.size(); i<ii; ++i)
@@ -144,6 +145,8 @@ void MainDataBuild::NormalFind(string query){
         res.pb(q.top().se);
         q.pop();
     }
+    listStr.clear();
+    listStr = splitString(s);
     display(res, listStr);
 }
 
@@ -267,3 +270,11 @@ vector<pair<int,int> > MainDataBuild::mergeRes(vector<pair<int,int> > u, vector<
     return res;
 }
 
+/// Synonym find
+void MainDataBuild::SynonymFind(string query){
+    query = optimizeStr(query);
+    vector<string> a = synData.getSynonym(query);
+    for (int i=0, ii=a.size(); i<ii; ++i)
+        query += " " + a[i];
+    NormalFind(query);
+}
