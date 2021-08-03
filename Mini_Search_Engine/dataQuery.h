@@ -16,9 +16,9 @@ using namespace std;
 
 class dataQueryNode{
     vector<pair<int,int> > best;
-    dataQueryNode* pNext[256];
+    dataQueryNode* pNext[130];
     dataQueryNode(){
-        for (int i=0; i<256; ++i)
+        for (int i=0; i<130; ++i)
             pNext[i] = nullptr;
     }
     void buildBest();

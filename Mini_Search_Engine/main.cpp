@@ -11,6 +11,7 @@ CS163
 #include "removeStopWords.h" /// Trie
 #include "typeOfQuestion.h" /// ???
 #include "Synonym.h" /// ???
+#include "MainDataBuild.h"
 
 using namespace std;
 
@@ -18,11 +19,13 @@ dataQuery dtQuery;
 WTWSuggest wtwSuggest;
 StopWords stWords;
 Synonym synData;
+MainDataBuild mainData;
 
 
 int main(){
 
     /// MAIN
+
     RunIntro();
     string s = "";
     string query;
@@ -35,7 +38,13 @@ int main(){
         gotoXY(8, 23);
         query = stWords.removeStopWords(s);
         cout << query << endl;
+        int context = typeOfQuestion(query);
+        if (context == 13){
+            mainData.NormalFind(query);
+        }
     }while(true);
+
+
 
     return 0;
 }

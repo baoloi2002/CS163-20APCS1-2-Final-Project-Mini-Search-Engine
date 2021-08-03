@@ -9,7 +9,7 @@
 using namespace std;
 
 class swNode{
-    const int base = 259;
+    const int base = 130;
     swNode** pNext;
     bool isEndOfWord;
     swNode(){

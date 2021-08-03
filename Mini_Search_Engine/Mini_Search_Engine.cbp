@@ -32,8 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="AvlTree.cpp" />
+		<Unit filename="AvlTree.h" />
 		<Unit filename="Header.h" />
 		<Unit filename="Intro.h" />
+		<Unit filename="MainDataBuild.cpp" />
+		<Unit filename="MainDataBuild.h" />
 		<Unit filename="SetConsoleCursorPosition.cpp" />
 		<Unit filename="SetConsoleCursorPosition.h" />
 		<Unit filename="Synonym.cpp" />
