@@ -1,5 +1,26 @@
 #include "MainDataBuild.h"
 #include "Header.h"
+#include <windows.h>
+
+string optimizeStr(string u){
+    string v;
+    for (int i=0,ii = u.size(); i<ii; ++i){
+        if ('0' <= u[i] && u[i] <= '9')
+            v.pb(u[i]);
+        else
+        if ('a' <= u[i] && u[i] <= 'z')
+            v.pb(u[i]);
+        else
+        if ('A' <= u[i] && u[i] <= 'Z')
+            v.pb(char(u[i] - 'A' + 'a'));
+    }
+    return v;
+}
+
+void ChangeTextColor(int u){
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, u);
+}
 
 /// Class Trie
 
@@ -37,21 +58,6 @@ vector<pair<int, int> > Trie::find(string u){
     }
     res = cur->mapId.getList();
     return res;
-}
-
-string Trie::optimizeStr(string u){
-    string v;
-    for (int i=0,ii = u.size(); i<ii; ++i){
-        if ('0' <= u[i] && u[i] <= '9')
-            v.pb(u[i]);
-        else
-        if ('a' <= u[i] && u[i] <= 'z')
-            v.pb(u[i]);
-        else
-        if ('A' <= u[i] && u[i] <= 'Z')
-            v.pb(char(u[i] - 'A' + 'a'));
-    }
-    return v;
 }
 
 /// Class Main Data Build
@@ -138,7 +144,7 @@ void MainDataBuild::NormalFind(string query){
         res.pb(q.top().se);
         q.pop();
     }
-    display(res);
+    display(res, listStr);
 }
 
 vector<string> MainDataBuild::splitString(string u){
@@ -146,21 +152,90 @@ vector<string> MainDataBuild::splitString(string u){
     string s = "";
     for (int i=0, ii=u.size(); i<ii; ++i){
         if (u[i] == ' '){
-            if (s != "")
+            if (s != ""){
                 res.pb(s);
+            }
             s = "";
         }else
             s.pb(u[i]);
     }
-    if (s != "")
+    if (s != ""){
         res.pb(s);
+    }
     return res;
 }
 
-void MainDataBuild::display(vector<int> file){
-    for (int i=0, ii=file.size(); i<ii; ++i){
-        cout << validFile[file[i]] << endl;
+void MainDataBuild::display(vector<int> file, vector<string> query){
+    int m = query.size();
+    vector<int> hQuery;
+    for (int i=0, ii=query.size(); i<ii; ++i){
+        query[i] = optimizeStr(query[i]);
+        hQuery.pb(hashingStr(query[i]));
     }
+
+    for (int i=0, ii=file.size(); i<ii; ++i){
+        /// File name
+        cout << "*****   " << validFile[file[i]]  << "   *****"  << endl;
+        vector<string> a,c;/// store the data of file;
+        vector<int> b; /// store hash key of data of file;
+        string address, u;
+
+        ifstream fi;
+        address = "Search Engine-Data/" + validFile[file[i]];
+        fi.open(address);
+        u = "";
+        while (fi >> u && u!=""){
+            a.pb(u);
+            c.pb(optimizeStr(u));
+            b.pb(hashingStr(c.back()));
+            u="";
+        }
+        fi.close();
+
+        int n = a.size();
+
+        vector<bool> isHighlight(n, false);
+
+        for (int j=0; j<n; ++j){
+            for (int k=0; k<m; ++k){
+                if (b[j] == hQuery[k]){
+                    if (c[j] == query[k]){
+                        isHighlight[j] = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        int id = -1, best = -1, s=0;
+        for (int j=0; j<n; ++j){
+            if (isHighlight[j]) ++s;
+            if (j>=40 && isHighlight[j-40])
+                --s;
+            if (s > best){
+                best = s;
+                id = j;
+            }
+        }
+
+        for (int j= max(0, id-40); j<=id; ++j){
+            if (isHighlight[j]){
+                ChangeTextColor(240);
+            }else{
+                ChangeTextColor(15);
+            }
+            cout << a[j] << ' ';
+        }
+        ChangeTextColor(15);
+        cout << endl << endl;
+    }
+}
+
+int MainDataBuild::hashingStr(string u){
+    int res = 0;
+    for (int i=0, ii = u.size(); i<ii; ++i)
+        res = (1LL*res*hashBase + int(u[i])) % Mod;
+    return res;
 }
 
 vector<pair<int,int> > MainDataBuild::mergeRes(vector<pair<int,int> > u, vector<pair<int,int> > v){

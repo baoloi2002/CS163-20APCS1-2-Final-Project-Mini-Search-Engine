@@ -1,6 +1,10 @@
-5
+9
 2 world
 1 people
 1 king
 1 two
 1 little
+1 school
+1 game
+1 rule
+1 first

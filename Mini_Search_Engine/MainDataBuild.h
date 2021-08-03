@@ -16,6 +16,8 @@
 
 using namespace std;
 
+string optimizeStr(string u);
+void ChangeTextColor(int u);
 
 class Trie{
     const int base = 130;
@@ -36,7 +38,6 @@ class Trie{
     Node* root;
 public:
     void insert(string u, int id);
-    string optimizeStr(string u);
     vector<pair<int, int> > find(string u);
     Trie(){
         root = new Node();
@@ -44,6 +45,9 @@ public:
 };
 
 class MainDataBuild{
+    const int Mod = 1e9 + 7;
+    const int hashBase = 131;
+
     vector<string> validFile;
     Trie trieMainData;
 public:
@@ -60,7 +64,9 @@ public:
 
     vector<pair<int,int> > mergeRes(vector<pair<int,int> > u, vector<pair<int,int> > v);
 
-    void display(vector<int> file);
+    void display(vector<int> file, vector<string> query);
+
+    int hashingStr(string u);
 };
 
 #endif // _MainDataBuild_
