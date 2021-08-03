@@ -10,5 +10,4 @@ extern WTWSuggest wtwSuggest;
 extern StopWords stWords;
 extern Synonym synData;
 
-
 #endif // _Header_

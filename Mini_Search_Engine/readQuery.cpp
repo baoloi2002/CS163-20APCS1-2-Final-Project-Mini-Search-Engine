@@ -3,7 +3,7 @@
 string readQuery(string s){
     /// Top Left corner
     const int X = 0;
-    const int Y = 0;
+    const int Y = 16;
 
     const string whiteSpaces = "                                                                   ";
 

@@ -33,6 +33,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="Header.h" />
+		<Unit filename="Intro.h" />
 		<Unit filename="SetConsoleCursorPosition.cpp" />
 		<Unit filename="SetConsoleCursorPosition.h" />
 		<Unit filename="Synonym.cpp" />
