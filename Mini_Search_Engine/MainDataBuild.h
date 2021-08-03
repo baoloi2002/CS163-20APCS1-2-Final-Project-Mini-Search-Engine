@@ -68,10 +68,13 @@ public:
 
     void WildcardFind(string query);
 
+    void MinusFind(string query);
+
     vector<string> splitString(string u);
 
     vector<pair<int,int> > mergeRes(vector<pair<int,int> > u, vector<pair<int,int> > v);
     vector<pair<int,int> > andRes(vector<pair<int,int> > u, vector<pair<int,int> > v);
+    vector<pair<int,int> > minusRes(vector<pair<int,int> > u, vector<pair<int,int> > v);
 
     void display(vector<int> file, vector<string> query);
 
