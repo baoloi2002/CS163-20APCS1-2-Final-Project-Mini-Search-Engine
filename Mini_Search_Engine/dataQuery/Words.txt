@@ -188,3 +188,6 @@ fly
 time"
 "Once
 *
+#throw
+200
+$20000

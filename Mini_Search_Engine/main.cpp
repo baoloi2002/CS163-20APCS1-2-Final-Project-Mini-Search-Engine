@@ -44,8 +44,36 @@ int main(){
         if (context == 2){
             mainData.OrFind(s);
         }else
+        if (context == 3){
+            /// NOOOOOOOOOOOOOOOOOOOOOOOOO
+            mainData.NormalFind(s);
+        }else
+        if (context == 4){
+            /// NOOOOOOOOOOOOOOOOOOOOOOOOO
+            mainData.NormalFind(s);
+        }else
+        if (context == 5){
+            /// NOOOOOOOOOOOOOOOOOOOOOOOOO
+            mainData.NormalFind(s);
+        }else
+        if (context == 6){
+            mainData.NormalFind(s);
+        }else
+        if (context == 7){
+            /// NOOOOOOOOOOOOOOOOOOOOOOOOO
+            mainData.NormalFind(s);
+        }else
+        if (context == 8){
+            /// NOOOOOOOOOOOOOOOOOOOOOOOOO
+            mainData.NormalFind(s);
+        }else
         if (context == 9 || context == 10){
+            /// 50 %
             mainData.WildcardFind(s);
+        }else
+        if (context == 11){
+            /// NOOOOOOOOOOOOOOOOOOOOOOOOO
+            mainData.NormalFind(s);
         }else
         if (context == 12){
             mainData.SynonymFind(s);
