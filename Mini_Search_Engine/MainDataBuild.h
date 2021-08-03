@@ -62,9 +62,16 @@ public:
 
     void SynonymFind(string query);
 
+    void AndFind(string query);
+
+    void OrFind(string query);
+
+    void WildcardFind(string query);
+
     vector<string> splitString(string u);
 
     vector<pair<int,int> > mergeRes(vector<pair<int,int> > u, vector<pair<int,int> > v);
+    vector<pair<int,int> > andRes(vector<pair<int,int> > u, vector<pair<int,int> > v);
 
     void display(vector<int> file, vector<string> query);
 

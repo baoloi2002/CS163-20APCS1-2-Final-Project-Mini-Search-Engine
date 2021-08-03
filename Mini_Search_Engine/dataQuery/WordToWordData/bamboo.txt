@@ -1,2 +1,5 @@
-1
+4
+14 OR
+5 AND
+2 time
 1 air

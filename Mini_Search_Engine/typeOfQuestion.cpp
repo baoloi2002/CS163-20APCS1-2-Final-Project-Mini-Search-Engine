@@ -3,7 +3,8 @@ using namespace std;
 
 int typeOfQuestion(string str) {
     int len = (int) str.length() - 1;
-    for (int i = 0; i <= len; ++i) if (i <= len - 2 && str[i] == 'A' && str[i + 1] == 'N' && str[i + 2] == 'D') {
+    for (int i = 0; i <= len; ++i)
+    if (i <= len - 2 && str[i] == 'A' && str[i + 1] == 'N' && str[i + 2] == 'D') {
         return 1;
     } else if (i <= len - 1 && str[i] == 'O' && str[i + 1] == 'R') {
         return 2;
@@ -26,6 +27,7 @@ int typeOfQuestion(string str) {
     } else if (str[0] == '"' && str[1] == '~' && str[len] == '"') {
         return 12;
     }
+
     if (str[0] == '"' && str[len] == '"') {
         return 9;
     } else {

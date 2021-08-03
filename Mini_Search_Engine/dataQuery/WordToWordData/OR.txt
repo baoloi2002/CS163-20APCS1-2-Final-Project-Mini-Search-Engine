@@ -1,2 +1,6 @@
-1
+5
+11 time
+2 fly
 1 cat
+1 bamboo
+1 dead

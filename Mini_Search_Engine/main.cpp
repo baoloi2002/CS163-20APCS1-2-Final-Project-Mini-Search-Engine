@@ -38,6 +38,15 @@ int main(){
         gotoXY(8, 23);
         cout << endl;
         int context = typeOfQuestion(s);
+        if (context == 1){
+            mainData.AndFind(s);
+        }else
+        if (context == 2){
+            mainData.OrFind(s);
+        }else
+        if (context == 9 || context == 10){
+            mainData.WildcardFind(s);
+        }else
         if (context == 12){
             mainData.SynonymFind(s);
         }else

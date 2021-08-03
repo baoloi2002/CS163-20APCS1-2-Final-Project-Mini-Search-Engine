@@ -169,6 +169,10 @@ vector<string> MainDataBuild::splitString(string u){
 }
 
 void MainDataBuild::display(vector<int> file, vector<string> query){
+    if (file.empty()){
+        cout << "NOTHING HERE !" << endl;
+        return;
+    }
     int m = query.size();
     vector<int> hQuery;
     for (int i=0, ii=query.size(); i<ii; ++i){
@@ -213,15 +217,15 @@ void MainDataBuild::display(vector<int> file, vector<string> query){
         int id = -1, best = -1, s=0;
         for (int j=0; j<n; ++j){
             if (isHighlight[j]) ++s;
-            if (j>=40 && isHighlight[j-40])
+            if (j>=50 && isHighlight[j-50])
                 --s;
-            if (s > best){
+            if (s >= best){
                 best = s;
                 id = j;
             }
         }
 
-        for (int j= max(0, id-40); j<=id; ++j){
+        for (int j= max(0, id-50); j<=id; ++j){
             if (isHighlight[j]){
                 ChangeTextColor(240);
             }else{
@@ -277,4 +281,170 @@ void MainDataBuild::SynonymFind(string query){
     for (int i=0, ii=a.size(); i<ii; ++i)
         query += " " + a[i];
     NormalFind(query);
+}
+
+/// And find
+
+void MainDataBuild::AndFind(string s){
+    vector<string> originalStr;
+    vector<string> listStr = splitString(s);
+    vector<vector<string> > query;
+    vector<string> tmpLStr;
+    for (int i=0, ii=listStr.size(); i<ii; ++i){
+        string tmp = stWords.removeStopWords(optimizeStr(listStr[i]));
+        if (listStr[i] == "AND"){
+            if (!tmpLStr.empty()){
+                query.pb(tmpLStr);
+                tmpLStr.clear();
+            }
+        }else{
+            originalStr.pb(listStr[i]);
+            if (tmp != "")
+                tmpLStr.pb(tmp);
+        }
+    }
+    if (!tmpLStr.empty()){
+        query.pb(tmpLStr);
+        tmpLStr.clear();
+    }
+
+    vector<pair<int,int> > res, tmpRes;
+
+    for (int i=0, ii=query.size(); i<ii; ++i){
+        for (int j=0, jj=query[i].size(); j<jj; ++j)
+            tmpRes = mergeRes(tmpRes, trieMainData.find(query[i][j]));
+        if (i == 0)
+            res = tmpRes;
+        else
+            res = andRes(res, tmpRes);
+        tmpRes.clear();
+    }
+
+    priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > q;
+    for (int i=0, ii = res.size(); i<ii; ++i){
+        q.push(mp(res[i].se, res[i].fi));
+        if (q.size() > 5)
+            q.pop();
+    }
+
+    vector<int> ans;
+    while(!q.empty()){
+        ans.pb(q.top().se);
+        q.pop();
+    }
+    display(ans, originalStr);
+}
+
+vector<pair<int,int> > MainDataBuild::andRes(vector<pair<int,int> > u, vector<pair<int,int> > v){
+    sort(u.begin(), u.end());
+    sort(v.begin(), v.end());
+
+    int i=0, j=0, n = u.size(), m = v.size();
+    vector<pair<int,int> > res;
+    while(i<n && j<m){
+        if (u[i].fi < v[j].fi){
+            ++i;
+        }else
+        if (u[i].fi > v[j].fi){
+            ++j;
+        }else{
+            res.pb(mp(u[i].fi, u[i].se + v[j].se));
+            ++i, ++j;
+        }
+    }
+    return res;
+}
+
+/// Or find
+void MainDataBuild::OrFind(string s){
+    string query = stWords.removeStopWords(s);
+    vector<string> listStr = splitString(query);
+
+    for (int i=0, ii=listStr.size(); i<ii; ++i){
+        if (listStr[i] == "OR"){
+            swap(listStr[i], listStr.back());
+            listStr.pop_back();
+            --ii;
+            --i;
+        }
+    }
+
+    vector<pair<int, int> > tmp;
+    for (int i=0, ii=listStr.size(); i<ii; ++i)
+        tmp = mergeRes(tmp, trieMainData.find(listStr[i]));
+
+    priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > q;
+    for (int i=0, ii = tmp.size(); i<ii; ++i){
+        q.push(mp(tmp[i].se, tmp[i].fi));
+        if (q.size() > 5)
+            q.pop();
+    }
+
+    vector<int> res;
+    while(!q.empty()){
+        res.pb(q.top().se);
+        q.pop();
+    }
+    listStr.clear();
+    listStr = splitString(s);
+    for (int i=0, ii=listStr.size(); i<ii; ++i){
+        if (listStr[i] == "OR"){
+            swap(listStr[i], listStr.back());
+            listStr.pop_back();
+            --i;
+            --ii;
+        }
+    }
+    display(res, listStr);
+}
+
+/// Exact Match And Wild card find
+
+void MainDataBuild::WildcardFind(string s){
+    vector<string> originalStr;
+    vector<string> listStr = splitString(s);
+    vector<vector<string> > query;
+    vector<string> tmpLStr;
+    for (int i=0, ii=listStr.size(); i<ii; ++i){
+        string tmp = stWords.removeStopWords(optimizeStr(listStr[i]));
+        if (listStr[i] == "*"){
+            if (!tmpLStr.empty()){
+                query.pb(tmpLStr);
+                tmpLStr.clear();
+            }
+        }else{
+            originalStr.pb(listStr[i]);
+            if (tmp != "")
+                tmpLStr.pb(tmp);
+        }
+    }
+    if (!tmpLStr.empty()){
+        query.pb(tmpLStr);
+        tmpLStr.clear();
+    }
+
+    vector<pair<int,int> > res;
+
+    for (int i=0, ii=query.size(); i<ii; ++i){
+        for (int j=0, jj=query[i].size(); j<jj; ++j){
+            if (res.empty())
+                res = trieMainData.find(query[i][j]);
+            else
+                res = mergeRes(res, trieMainData.find(query[i][j]));
+        }
+    }
+
+    priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > q;
+    for (int i=0, ii = res.size(); i<ii; ++i){
+        q.push(mp(res[i].se, res[i].fi));
+        if (q.size() > 5)
+            q.pop();
+    }
+
+    vector<int> ans;
+    while(!q.empty()){
+        ans.pb(q.top().se);
+        q.pop();
+    }
+    display(ans, originalStr);
 }
