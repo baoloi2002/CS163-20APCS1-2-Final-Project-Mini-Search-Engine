@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <iostream>
 #include <fstream>
+#include <cstring>
 #include "AvlTree.h"
 #include "removeStopWords.h"
 #include <queue>
@@ -71,6 +72,10 @@ public:
     void MinusFind(string query);
 
     void IntitleFind(string query);
+
+    void PlusFind(string query);
+
+    void FileTypeFind(string query);
 
     vector<string> splitString(string u);
 

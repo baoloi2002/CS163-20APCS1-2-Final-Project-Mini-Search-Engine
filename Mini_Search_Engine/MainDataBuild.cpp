@@ -633,3 +633,85 @@ void MainDataBuild::displayWithTitleCheck(vector<int> file, vector<string> query
         cout << endl << endl;
     }
 }
+
+/// Plus find
+
+void MainDataBuild::PlusFind(string s){
+    vector<string> originalStr;
+    vector<string> listStr = splitString(s);
+    vector<vector<string> > query;
+    vector<string> tmpLStr;
+    for (int i=0, ii=listStr.size(); i<ii; ++i){
+        string tmp = stWords.removeStopWords(optimizeStr(listStr[i]));
+        if (listStr[i] == "+"){
+            if (!tmpLStr.empty()){
+                query.pb(tmpLStr);
+                tmpLStr.clear();
+            }
+        }else{
+            originalStr.pb(listStr[i]);
+            if (tmp != "")
+                tmpLStr.pb(tmp);
+        }
+    }
+    if (!tmpLStr.empty()){
+        query.pb(tmpLStr);
+        tmpLStr.clear();
+    }
+
+    vector<pair<int,int> > res, tmpRes;
+
+    for (int i=0, ii=query.size(); i<ii; ++i){
+        for (int j=0, jj=query[i].size(); j<jj; ++j)
+            tmpRes = mergeRes(tmpRes, trieMainData.find(query[i][j]));
+        if (i == 0)
+            res = tmpRes;
+        else
+            res = andRes(res, tmpRes);
+        tmpRes.clear();
+    }
+
+    priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > q;
+    for (int i=0, ii = res.size(); i<ii; ++i){
+        q.push(mp(res[i].se, res[i].fi));
+        if (q.size() > 5)
+            q.pop();
+    }
+
+    vector<int> ans;
+    while(!q.empty()){
+        ans.pb(q.top().se);
+        q.pop();
+    }
+    display(ans, originalStr);
+}
+
+/// File type find
+
+void MainDataBuild::FileTypeFind(string query){
+    string s;
+    for (int i=9, ii=query.size(); i<ii; ++i)
+        s.pb(query[i]);
+    string address = "Search Engine-Data/___index.txt";
+    ifstream fi;
+    fi.open(address);
+
+    int cnt = 0;
+    string u = "";
+    int m = s.size();
+    while(fi>>u && u!="" && cnt < 10){
+        if (u.substr(int(u.size()) - m, m) == s){
+            cout << u.substr(0, int(u.size())-m);
+            ChangeTextColor(240);
+            cout << s;
+            ChangeTextColor(15);
+            cout << endl;
+            ++cnt;
+        }
+        u = "";
+    }
+
+    fi.close();
+}
+
+

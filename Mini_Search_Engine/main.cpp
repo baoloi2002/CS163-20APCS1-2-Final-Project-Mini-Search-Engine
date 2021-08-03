@@ -51,11 +51,10 @@ int main(){
             mainData.IntitleFind(s);
         }else
         if (context == 5){
-            /// NOOOOOOOOOOOOOOOOOOOOOOOOO
-            mainData.NormalFind(s);
+            mainData.PlusFind(s);
         }else
         if (context == 6){
-            mainData.NormalFind(s);
+            mainData.FileTypeFind(s);
         }else
         if (context == 7){
             /// NOOOOOOOOOOOOOOOOOOOOOOOOO

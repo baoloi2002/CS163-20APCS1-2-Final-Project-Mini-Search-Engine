@@ -1,6 +1,7 @@
-5
-14 OR
-5 AND
-4 time
+6
+15 OR
+6 AND
+5 time
 1 air
 1 -time
+1 +

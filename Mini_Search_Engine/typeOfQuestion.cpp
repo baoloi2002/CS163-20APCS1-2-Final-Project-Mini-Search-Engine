@@ -14,7 +14,7 @@ int typeOfQuestion(string str) {
         return 4;
     } else if (i <= len - 1 && str[i] == ' ' && str[i + 1] == '+') {
         return 5;
-    } else if (i <= len - 3 && str[i] == '.' && str[i] == 't' && str[i + 1] == 'x' && str[i + 2] == 't') {
+    } else if (len > 9 && str[0] == 'f' && str[1] == 'i' && str[2] == 'l' && str[3] == 'e' && str[4] == 't' && str[5] == 'y' && str[6] == 'p' && str[7] == 'e' && str[8] == ':') {
         return 6;
     } else if (i <= len - 1 && str[i] == '.' && str[i] == '.') {
         return 11;
