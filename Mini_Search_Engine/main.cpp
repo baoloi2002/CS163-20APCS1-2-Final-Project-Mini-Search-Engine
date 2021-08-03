@@ -48,8 +48,7 @@ int main(){
             mainData.MinusFind(s);
         }else
         if (context == 4){
-            /// NOOOOOOOOOOOOOOOOOOOOOOOOO
-            mainData.NormalFind(s);
+            mainData.IntitleFind(s);
         }else
         if (context == 5){
             /// NOOOOOOOOOOOOOOOOOOOOOOOOO

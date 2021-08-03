@@ -70,6 +70,8 @@ public:
 
     void MinusFind(string query);
 
+    void IntitleFind(string query);
+
     vector<string> splitString(string u);
 
     vector<pair<int,int> > mergeRes(vector<pair<int,int> > u, vector<pair<int,int> > v);
@@ -77,6 +79,8 @@ public:
     vector<pair<int,int> > minusRes(vector<pair<int,int> > u, vector<pair<int,int> > v);
 
     void display(vector<int> file, vector<string> query);
+
+    void displayWithTitleCheck(vector<int> file, vector<string> query);
 
     int hashingStr(string u);
 };

@@ -506,3 +506,130 @@ vector<pair<int,int> > MainDataBuild::minusRes(vector<pair<int,int> > u, vector<
     return res;
 }
 
+/// Intitle find
+
+void MainDataBuild::IntitleFind(string s){
+    string Stmp;
+    for (int i=8, ii=s.size(); i<ii; ++i)
+        Stmp.pb(s[i]);
+
+    string query = stWords.removeStopWords(Stmp);
+    vector<string> listStr = splitString(query);
+    vector<pair<int, int> > tmp;
+    for (int i=0, ii=listStr.size(); i<ii; ++i)
+        tmp = mergeRes(tmp, trieMainData.find(listStr[i]));
+
+    /// Add bonus for title
+    for (int i=0, ii=listStr.size(); i<ii; ++i)
+        listStr[i] = optimizeStr(listStr[i]);
+
+    for (int i=0, ii=tmp.size(); i<ii; ++i){
+        if (tmp[i].fi == -1){
+            cerr << "OK" << endl;
+        }
+        int n = listStr.size();
+        ifstream fi;
+        string address = "Search Engine-Data/" + validFile[tmp[i].fi];
+        n = n*3 / 2;
+        fi.open(address);
+        string u;
+        while (fi >> u && u !="" && n>0){
+            u = optimizeStr(u);
+            for (int j=0, jj=listStr.size(); j<jj;++j)
+            if (u == listStr[j]){
+                tmp[i].se += 20;
+                break;
+            }
+            --n;
+            u="";
+        }
+        fi.close();
+    }
+
+    priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > q;
+    for (int i=0, ii = tmp.size(); i<ii; ++i){
+        q.push(mp(tmp[i].se, tmp[i].fi));
+        if (q.size() > 5)
+            q.pop();
+    }
+
+    vector<int> res;
+    while(!q.empty()){
+        res.pb(q.top().se);
+        q.pop();
+    }
+    listStr.clear();
+    listStr = splitString(Stmp);
+
+    displayWithTitleCheck(res, listStr);
+}
+
+void MainDataBuild::displayWithTitleCheck(vector<int> file, vector<string> query){
+    if (file.empty()){
+        cout << "NOTHING HERE !" << endl;
+        return;
+    }
+    int m = query.size();
+    vector<int> hQuery;
+    for (int i=0, ii=query.size(); i<ii; ++i){
+        query[i] = optimizeStr(query[i]);
+        hQuery.pb(hashingStr(query[i]));
+    }
+
+    for (int i=0, ii=file.size(); i<ii; ++i){
+        /// File name
+        cout << "*****   " << validFile[file[i]]  << "   *****"  << endl;
+        vector<string> a,c;/// store the data of file;
+        vector<int> b; /// store hash key of data of file;
+        string address, u;
+
+        ifstream fi;
+        address = "Search Engine-Data/" + validFile[file[i]];
+        fi.open(address);
+        u = "";
+        while (fi >> u && u!=""){
+            a.pb(u);
+            c.pb(optimizeStr(u));
+            b.pb(hashingStr(c.back()));
+            u="";
+        }
+        fi.close();
+
+        int n = a.size();
+
+        vector<bool> isHighlight(n, false);
+
+        for (int j=0; j<n; ++j){
+            for (int k=0; k<m; ++k){
+                if (b[j] == hQuery[k]){
+                    if (c[j] == query[k]){
+                        isHighlight[j] = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        int id = min(30, n-1), best = m, s=0;
+        for (int j=0; j<n; ++j){
+            if (isHighlight[j]) ++s;
+            if (j>=50 && isHighlight[j-50])
+                --s;
+            if (s >= best){
+                best = s;
+                id = j;
+            }
+        }
+
+        for (int j= max(0, id-50); j<=id; ++j){
+            if (isHighlight[j]){
+                ChangeTextColor(240);
+            }else{
+                ChangeTextColor(15);
+            }
+            cout << a[j] << ' ';
+        }
+        ChangeTextColor(15);
+        cout << endl << endl;
+    }
+}

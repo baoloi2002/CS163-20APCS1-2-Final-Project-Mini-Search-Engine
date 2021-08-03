@@ -196,3 +196,9 @@ Manchester
 -u
 -time
 -bamboo
+nails
+Hammer
+Fairy
+Quang
+Fair
+fairy

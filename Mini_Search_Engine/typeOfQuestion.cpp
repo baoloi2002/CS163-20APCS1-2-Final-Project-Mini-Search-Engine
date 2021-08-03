@@ -10,7 +10,7 @@ int typeOfQuestion(string str) {
         return 2;
     } else if (i <= len - 1 && str[i] == ' ' && str[i + 1] == '-') {
         return 3;
-    } else if (str[0] == 'i' && str[1] == 'n' && str[2] == 't' && str[3] == 'i' && str[4] == 't' && str[5] == 'l' && str[6] == 'e' && str[1] == ':') {
+    } else if (str[0] == 'i' && str[1] == 'n' && str[2] == 't' && str[3] == 'i' && str[4] == 't' && str[5] == 'l' && str[6] == 'e' && str[7] == ':') {
         return 4;
     } else if (i <= len - 1 && str[i] == ' ' && str[i + 1] == '+') {
         return 5;
