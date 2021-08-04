@@ -215,3 +215,12 @@ wave"
 burning"
 burning
 bright"
+throw
+#test
+#testing
+2
+$100
+$200
+$20
+$2
+$30000

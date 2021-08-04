@@ -3,6 +3,14 @@ using namespace std;
 
 int typeOfQuestion(string str) {
     int len = (int) str.length() - 1;
+
+    for (int i=0, ii = str.size()-1; i<ii;++i)
+        if (str[i] == '.' && str[i+1] =='.')
+            return 11;
+    for (int i=0, ii = str.size()-1; i<ii;++i)
+        if (str[i] == '$')
+            return 7;
+
     for (int i = 0; i <= len; ++i)
     if (i <= len - 2 && str[i] == 'A' && str[i + 1] == 'N' && str[i + 2] == 'D') {
         return 1;
@@ -16,10 +24,6 @@ int typeOfQuestion(string str) {
         return 5;
     } else if (len > 9 && str[0] == 'f' && str[1] == 'i' && str[2] == 'l' && str[3] == 'e' && str[4] == 't' && str[5] == 'y' && str[6] == 'p' && str[7] == 'e' && str[8] == ':') {
         return 6;
-    } else if (i <= len - 1 && str[i] == '.' && str[i] == '.') {
-        return 11;
-    } else if (str[i] == '$') {
-        return 7;
     } else if (str[i] == '#') {
         return 8;
     } else if (str[0] == '"' && str[i] == '*' && str[len] == '"') {
@@ -33,4 +37,5 @@ int typeOfQuestion(string str) {
     } else {
         return 13;
     }
+    return 13;
 }

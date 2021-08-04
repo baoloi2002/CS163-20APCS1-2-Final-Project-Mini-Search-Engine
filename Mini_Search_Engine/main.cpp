@@ -57,19 +57,16 @@ int main(){
             mainData.FileTypeFind(s);
         }else
         if (context == 7){
-            /// NOOOOOOOOOOOOOOOOOOOOOOOOO
-            mainData.NormalFind(s);
+            mainData.PriceFind(s);
         }else
         if (context == 8){
-            /// NOOOOOOOOOOOOOOOOOOOOOOOOO
-            mainData.NormalFind(s);
+            mainData.HashTagFind(s);
         }else
         if (context == 9 || context == 10){
             mainData.WildcardFind(s);
         }else
         if (context == 11){
-            /// NOOOOOOOOOOOOOOOOOOOOOOOOO
-            mainData.NormalFind(s);
+            mainData.RangPriceFind(s);
         }else
         if (context == 12){
             mainData.SynonymFind(s);

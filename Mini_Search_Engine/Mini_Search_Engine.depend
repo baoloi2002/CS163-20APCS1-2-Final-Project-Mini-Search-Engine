@@ -58,7 +58,7 @@
 	<conio.h>
 	<windows.h>
 
-1628006905 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\main.cpp
+1628042675 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\main.cpp
 	<iostream>
 	"Intro.h"
 	"Header.h"
@@ -122,7 +122,7 @@
 1627892152 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\stopwords.cpp
 	"stopWords.h"
 
-1628007155 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\typeofquestion.cpp
+1628043608 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\typeofquestion.cpp
 	"typeOfQuestion.h"
 
 1627891916 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\typeofquestion.h
@@ -193,17 +193,18 @@
 1627961075 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\intro.h
 	<iostream>
 
-1628008383 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\maindatabuild.h
+1628043208 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\maindatabuild.h
 	<vector>
 	<algorithm>
 	<iostream>
 	<fstream>
 	<cstring>
 	"AvlTree.h"
+	"AVL_in_AVL.h"
 	"removeStopWords.h"
 	<queue>
 
-1628011039 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\maindatabuild.cpp
+1628043947 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\maindatabuild.cpp
 	"MainDataBuild.h"
 	"Header.h"
 	<windows.h>
@@ -214,4 +215,13 @@
 
 1627974442 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\avltree.cpp
 	"AvlTree.h"
+
+1628042062 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\avl_in_avl.cpp
+	"AVL_in_AVL.h"
+
+1628042017 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\avl_in_avl.h
+	"AvlTree.h"
+	<vector>
+	<algorithm>
+	<iostream>
 

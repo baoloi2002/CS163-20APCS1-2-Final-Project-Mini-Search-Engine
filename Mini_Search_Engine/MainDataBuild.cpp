@@ -77,6 +77,22 @@ void MainDataBuild::addDataFromFile(string address, int id){
     fi.open(address);
     string u = "";
     while(fi >> u && u!=""){
+        if (u[0] == '#')
+            hashTag.insert(u, id);
+        if (u[0] == '$'){
+            string v = optimizeStr(u);
+            int num = 0;
+            bool check = true;
+            for (int i=0, ii=v.size(); i<ii; ++i)
+                if ('0'<=v[i]  && v[i] <='9'){
+                    num = num*10 + int(v[i] - '0');
+                }else{
+                    check = false;
+                    break;
+                }
+            if (check)
+                PriceTree.insertData(num, id);
+        }
         trieMainData.insert(u, id);
         u = "";
     }
@@ -799,5 +815,181 @@ void MainDataBuild::FileTypeFind(string query){
 
     fi.close();
 }
+
+/// hash tag find
+
+void MainDataBuild::HashTagFind(string s){
+    string query = stWords.removeStopWords(s);
+    vector<string> listStr = splitString(query);
+    vector<pair<int, int> > tmp;
+    for (int i=0, ii=listStr.size(); i<ii; ++i)
+        tmp = mergeRes(tmp, hashTag.find(listStr[i]));
+
+    priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > q;
+    for (int i=0, ii = tmp.size(); i<ii; ++i){
+        q.push(mp(tmp[i].se, tmp[i].fi));
+        if (q.size() > 5)
+            q.pop();
+    }
+
+    vector<int> res;
+    while(!q.empty()){
+        res.pb(q.top().se);
+        q.pop();
+    }
+    listStr.clear();
+    listStr = splitString(s);
+    display(res, listStr);
+}
+
+/// Price Find
+bool MainDataBuild::StrToNum(string query, int& u){
+    u = 0;
+    bool check = true;
+    for (int i=0, ii=query.size(); i<ii; ++i){
+        if ('0' <= query[i] && query[i] <='9'){
+            u = u*10 + int(query[i] - '0');
+        }else{
+            check =false;
+            break;
+        }
+    }
+    return check;
+}
+
+
+void MainDataBuild::PriceFind(string s){
+    string query = optimizeStr(s);
+    int u = 0;
+    bool check = StrToNum(optimizeStr(query), u);
+
+    if (!check){
+        NormalFind(s);
+        return;
+    }
+    vector<pair<int,int> > tmp;
+    tmp = PriceTree.getList(u,u);
+
+
+    priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > q;
+    for (int i=0, ii = tmp.size(); i<ii; ++i){
+        q.push(mp(tmp[i].se, tmp[i].fi));
+        if (q.size() > 5)
+            q.pop();
+    }
+
+    vector<int> res;
+    while(!q.empty()){
+        res.pb(q.top().se);
+        q.pop();
+    }
+    vector<string> listStr = splitString(s);
+    display(res, listStr);
+
+}
+
+/// Range Price Find
+
+void MainDataBuild::RangPriceFind(string query){
+    vector<string> listStr;
+    string s;
+    for (int i=0, ii=query.size(); i<ii; ++i){
+        if (query[i] == '.'){
+            if (s != "")
+                listStr.pb(s);
+            s = "";
+        }
+        else
+            s.pb(query[i]);
+    }
+    if (s != "")
+        listStr.pb(s);
+    int u, v;
+    bool check = int(listStr.size()>1) && StrToNum(optimizeStr(listStr[0]), u) && StrToNum(optimizeStr(listStr[1]), v);
+
+    if (!check){
+        NormalFind(query);
+        return;
+    }
+    vector<pair<int,int> > tmp;
+    tmp = PriceTree.getList(u,v);
+
+
+    priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > q;
+    for (int i=0, ii = tmp.size(); i<ii; ++i){
+        q.push(mp(tmp[i].se, tmp[i].fi));
+        if (q.size() > 5)
+            q.pop();
+    }
+
+    vector<int> res;
+    while(!q.empty()){
+        res.pb(q.top().se);
+        q.pop();
+    }
+
+    displayRange(res, u, v);
+
+}
+void MainDataBuild::displayRange(vector<int> file, int L, int R){
+    if (file.empty()){
+        cout << "NOTHING HERE !" << endl;
+        return;
+    }
+
+    for (int i=0, ii=file.size(); i<ii; ++i){
+        /// File name
+        cout << "*****   " << validFile[file[i]]  << "   *****"  << endl;
+        vector<string> a;/// store the data of file;
+        string address, u;
+
+        ifstream fi;
+        address = "Search Engine-Data/" + validFile[file[i]];
+        fi.open(address);
+        u = "";
+        while (fi >> u && u!=""){
+            a.pb(u);
+            u="";
+        }
+        fi.close();
+
+        int n = a.size();
+
+        vector<bool> isHighlight(n, false);
+        int tmp;
+        for (int i=0; i<n; ++i){
+            u = optimizeStr(a[i]);
+            if (StrToNum(u, tmp)){
+                if (L <= tmp && tmp <= R){
+                    isHighlight[i] = true;
+                }
+            }
+        }
+
+        int id = -1, best = -1, s=0;
+        for (int j=0; j<n; ++j){
+            if (isHighlight[j]) ++s;
+            if (j>=50 && isHighlight[j-50])
+                --s;
+            if (s >= best){
+                best = s;
+                id = j;
+            }
+        }
+
+        for (int j= max(0, id-50); j<=id; ++j){
+            if (isHighlight[j]){
+                ChangeTextColor(240);
+            }else{
+                ChangeTextColor(15);
+            }
+            cout << a[j] << ' ';
+        }
+        ChangeTextColor(15);
+        cout << endl << endl;
+    }
+}
+
+
 
 

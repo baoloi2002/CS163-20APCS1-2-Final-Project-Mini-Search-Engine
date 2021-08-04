@@ -12,6 +12,7 @@
 #include <fstream>
 #include <cstring>
 #include "AvlTree.h"
+#include "AVL_in_AVL.h"
 #include "removeStopWords.h"
 #include <queue>
 
@@ -51,6 +52,8 @@ class MainDataBuild{
 
     vector<string> validFile;
     Trie trieMainData;
+    Trie hashTag;
+    AAvlTree PriceTree;
 public:
     MainDataBuild();
     void getListOFVaildFile();
@@ -77,6 +80,12 @@ public:
 
     void FileTypeFind(string query);
 
+    void HashTagFind(string query);
+
+    void PriceFind(string query);
+
+    void RangPriceFind(string query);
+
     vector<string> splitString(string u);
 
     vector<pair<int,int> > mergeRes(vector<pair<int,int> > u, vector<pair<int,int> > v);
@@ -90,6 +99,11 @@ public:
     int hashingStr(string u);
 
     bool cmpSF(const pair<int,int>& u, const pair<int,int>& v);
+
+    bool StrToNum(string query, int& u);
+
+    void displayRange(vector<int> file, int L, int R);
+
 
 };
 
