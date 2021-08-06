@@ -1,4 +1,4 @@
-20
+21
 7 quang"
 4 Quang
 4 time
@@ -7,6 +7,7 @@
 2 rich
 2 forest
 2 people
+2 light
 1 warm
 1 gradually
 1 then

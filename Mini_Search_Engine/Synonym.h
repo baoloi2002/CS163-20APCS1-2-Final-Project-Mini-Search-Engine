@@ -98,8 +98,6 @@ struct synNode {
         } else if (val > root->val[0]) {
             Search(root->rig, val, chk);
         } else {
-            if (root->val[0] == 9699226)
-                cerr << "IS OK" << endl;
             chk = root;
         }
     }

@@ -233,7 +233,7 @@ void MainDataBuild::display(vector<int> file, vector<string> query){
         int id = -1, best = -1, s=0;
         for (int j=0; j<n; ++j){
             if (isHighlight[j]) ++s;
-            if (j>=50 && isHighlight[j-50])
+            if (j>=showRange && isHighlight[j-showRange])
                 --s;
             if (s >= best){
                 best = s;
@@ -241,7 +241,7 @@ void MainDataBuild::display(vector<int> file, vector<string> query){
             }
         }
 
-        for (int j= max(0, id-50); j<=id; ++j){
+        for (int j= max(0, id-showRange); j<=id; ++j){
             if (isHighlight[j]){
                 ChangeTextColor(240);
             }else{
@@ -626,9 +626,6 @@ void MainDataBuild::IntitleFind(string s){
         listStr[i] = optimizeStr(listStr[i]);
 
     for (int i=0, ii=tmp.size(); i<ii; ++i){
-        if (tmp[i].fi == -1){
-            cerr << "OK" << endl;
-        }
         int n = listStr.size();
         ifstream fi;
         string address = "Search Engine-Data/" + validFile[tmp[i].fi];
@@ -715,7 +712,7 @@ void MainDataBuild::displayWithTitleCheck(vector<int> file, vector<string> query
         int id = min(30, n-1), best = m, s=0;
         for (int j=0; j<n; ++j){
             if (isHighlight[j]) ++s;
-            if (j>=50 && isHighlight[j-50])
+            if (j>=showRange && isHighlight[j-showRange])
                 --s;
             if (s >= best){
                 best = s;
@@ -723,7 +720,7 @@ void MainDataBuild::displayWithTitleCheck(vector<int> file, vector<string> query
             }
         }
 
-        for (int j= max(0, id-50); j<=id; ++j){
+        for (int j= max(0, id-showRange); j<=id; ++j){
             if (isHighlight[j]){
                 ChangeTextColor(240);
             }else{
@@ -859,6 +856,7 @@ bool MainDataBuild::StrToNum(string query, int& u){
 
 
 void MainDataBuild::PriceFind(string s){
+    /*
     string query = optimizeStr(s);
     int u = 0;
     bool check = StrToNum(optimizeStr(query), u);
@@ -869,6 +867,24 @@ void MainDataBuild::PriceFind(string s){
     }
     vector<pair<int,int> > tmp;
     tmp = PriceTree.getList(u,u);
+    */
+
+    vector<string> listStr = splitString(s);
+    vector<pair<int,int> > t1, t2;/// t1 = num, t2 = normal
+    for (int i=0, ii=listStr.size(); i<ii; ++i){
+        if (listStr[i][0] == '$'){
+            int u = 0;
+            bool check = StrToNum(optimizeStr(listStr[i]), u);
+            if (!check)
+                t2 = mergeRes(t2, trieMainData.find(listStr[i]));
+            else
+                t1 = mergeRes(t1, PriceTree.getList(u, u));
+        }else
+            t2 = mergeRes(t2, trieMainData.find(listStr[i]));
+    }
+
+    vector<pair<int, int> > tmp = andRes(t1, t2);
+    tmp = mergeRes(tmp , t1);
 
 
     priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > q;
@@ -883,7 +899,9 @@ void MainDataBuild::PriceFind(string s){
         res.pb(q.top().se);
         q.pop();
     }
-    vector<string> listStr = splitString(s);
+
+    listStr.clear();
+    listStr = splitString(s);
     display(res, listStr);
 
 }
@@ -891,16 +909,31 @@ void MainDataBuild::PriceFind(string s){
 /// Range Price Find
 
 void MainDataBuild::RangPriceFind(string query){
-    vector<string> listStr;
+    vector<string> listStr = splitString(query);
+    vector<string> onlyW, onlyRange;
+    for (int i=0, ii=listStr.size(); i<ii; ++i){
+        bool isRange = false;
+        for (int j=0, jj=listStr[i].size()-1; j < jj; ++j)
+        if (listStr[i][j] == '.' && listStr[i][j+1] == '.'){
+            isRange = true;
+            break;
+        }
+        if (!isRange)
+            onlyW.pb(listStr[i]);
+        else
+            onlyRange.pb(listStr[i]);
+    }
+    listStr.clear();
     string s;
-    for (int i=0, ii=query.size(); i<ii; ++i){
-        if (query[i] == '.'){
+    string sQuery = onlyRange.back();
+    for (int i=0, ii=sQuery.size(); i<ii; ++i){
+        if (sQuery[i] == '.'){
             if (s != "")
                 listStr.pb(s);
             s = "";
         }
         else
-            s.pb(query[i]);
+            s.pb(sQuery[i]);
     }
     if (s != "")
         listStr.pb(s);
@@ -928,13 +961,19 @@ void MainDataBuild::RangPriceFind(string query){
         q.pop();
     }
 
-    displayRange(res, u, v);
+    displayRange(res, u, v, onlyW);
 
 }
-void MainDataBuild::displayRange(vector<int> file, int L, int R){
+void MainDataBuild::displayRange(vector<int> file, int L, int R, vector<string> onlyW){
     if (file.empty()){
         cout << "NOTHING HERE !" << endl;
         return;
+    }
+
+    unordered_map<int, string> hQuery;// Luoi code qua
+    for (int i=0, ii=onlyW.size(); i<ii; ++i){
+        onlyW[i] = optimizeStr(onlyW[i]);
+        hQuery[ hashingStr(onlyW[i]) ] = onlyW[i];
     }
 
     for (int i=0, ii=file.size(); i<ii; ++i){
@@ -963,13 +1002,18 @@ void MainDataBuild::displayRange(vector<int> file, int L, int R){
                 if (L <= tmp && tmp <= R){
                     isHighlight[i] = true;
                 }
+            }else{
+                tmp = hashingStr(u);
+                if (hQuery.count(tmp) && hQuery[tmp] == u){
+                    isHighlight[i] = true;
+                }
             }
         }
 
         int id = -1, best = -1, s=0;
         for (int j=0; j<n; ++j){
             if (isHighlight[j]) ++s;
-            if (j>=50 && isHighlight[j-50])
+            if (j>=showRange && isHighlight[j-showRange])
                 --s;
             if (s >= best){
                 best = s;
@@ -977,7 +1021,7 @@ void MainDataBuild::displayRange(vector<int> file, int L, int R){
             }
         }
 
-        for (int j= max(0, id-50); j<=id; ++j){
+        for (int j= max(0, id-showRange); j<=id; ++j){
             if (isHighlight[j]){
                 ChangeTextColor(240);
             }else{

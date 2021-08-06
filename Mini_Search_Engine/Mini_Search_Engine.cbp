@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="AVL_in_AVL.cpp" />
+		<Unit filename="AVL_in_AVL.h" />
 		<Unit filename="AvlTree.cpp" />
 		<Unit filename="AvlTree.h" />
 		<Unit filename="Header.h" />

@@ -1,6 +1,7 @@
-5
-12 time
+6
+13 time
 2 fly
 1 cat
 1 bamboo
 1 dead
+1 love

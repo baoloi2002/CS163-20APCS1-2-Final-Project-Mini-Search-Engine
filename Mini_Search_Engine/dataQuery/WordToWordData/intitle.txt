@@ -1,6 +1,8 @@
-5
+7
+4 Fairy
+3 fairy
 2 hammer
-2 Fairy
 1 Hammer
 1 Fair
-1 fairy
+1 Old
+1 Manchester-United

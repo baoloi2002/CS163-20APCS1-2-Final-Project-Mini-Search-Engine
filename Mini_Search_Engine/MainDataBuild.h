@@ -13,6 +13,7 @@
 #include <cstring>
 #include "AvlTree.h"
 #include "AVL_in_AVL.h"
+#include "unordered_map"
 #include "removeStopWords.h"
 #include <queue>
 
@@ -49,6 +50,7 @@ public:
 class MainDataBuild{
     const int Mod = 1e9 + 7;
     const int hashBase = 131;
+    const int showRange = 100;
 
     vector<string> validFile;
     Trie trieMainData;
@@ -102,7 +104,7 @@ public:
 
     bool StrToNum(string query, int& u);
 
-    void displayRange(vector<int> file, int L, int R);
+    void displayRange(vector<int> file, int L, int R, vector<string> onlyW);
 
 
 };
