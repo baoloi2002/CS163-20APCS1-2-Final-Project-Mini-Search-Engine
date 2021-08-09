@@ -8,7 +8,9 @@ Thu 20 Jun 2019 14.10BST
 
 
 Last modified on Thu 20 Jun 2019 14.18BST
-
+#tester
+#time
+#run
 
 What is the best way of wrecking a city? Pour cars into it. Heavy traffic, 50 years of research shows, breaks up communities, disrupts social life and crushes local cultures. Noise drowns out conversation and drives people indoors. Pollution makes streets inhospitable. Cars take up the space that might have been used for children to play, adults to meet, and local projects to grow.
 Street life is treated as an impediment to traffic. In cities all over the world it has been cleared for cars. Stalls, hawkers, football and cricket games, old people playing dominoes, chess or ptanque: all must make way for the car. So much land is required for driving and parking that there is little left for human life. In cities like Barcelona that curb traffic, cars use about 25% of the urban area. In cities like Houston that dont, they use 60%. The car eats the public space that could otherwise become parks, cycle lanes, markets and playgrounds.
