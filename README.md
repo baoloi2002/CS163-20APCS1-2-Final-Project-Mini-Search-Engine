@@ -1,5 +1,7 @@
 # CS163-20APCS1-2-Final Project-Mini Search Engine
  Lưu ý: vì 1 số lỗi không xác định được, khi chạy pj vui lòng chạy ở dạng debug(F8) nếu dùng codeblock. Còn lại thì bug ráng chịu
+ 
+ Theo tình hình thì các nhóm khác sử dụng rất nhiều thư viện có sẵn còn nhóm mình thì ... :v nên ai muốn dùng gì để sửa thì dùng. (Hy vọng có ai đó đọc cái này :'( )
 
  Project được chia làm 4 phần chính:
  - Đọc query được nhập vào.
