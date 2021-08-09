@@ -1,5 +1,6 @@
-4
+5
 1 no
 1 OR
 1 -bamboo
 1 -firewood
+1 AND
