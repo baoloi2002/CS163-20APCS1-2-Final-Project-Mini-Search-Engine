@@ -189,6 +189,7 @@ void MainDataBuild::display(vector<int> file, vector<string> query){
         cout << "NOTHING HERE !" << endl;
         return;
     }
+    reverse(file.begin(), file.end());
     int m = query.size();
     vector<int> hQuery;
     for (int i=0, ii=query.size(); i<ii; ++i){
@@ -668,6 +669,7 @@ void MainDataBuild::displayWithTitleCheck(vector<int> file, vector<string> query
         cout << "NOTHING HERE !" << endl;
         return;
     }
+    reverse(file.begin(), file.end());
     int m = query.size();
     vector<int> hQuery;
     for (int i=0, ii=query.size(); i<ii; ++i){
@@ -969,6 +971,7 @@ void MainDataBuild::displayRange(vector<int> file, int L, int R, vector<string> 
         cout << "NOTHING HERE !" << endl;
         return;
     }
+    reverse(file.begin(), file.end());
 
     unordered_map<int, string> hQuery;// Luoi code qua
     for (int i=0, ii=onlyW.size(); i<ii; ++i){
