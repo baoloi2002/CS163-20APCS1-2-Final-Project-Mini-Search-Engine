@@ -886,7 +886,8 @@ void MainDataBuild::PriceFind(string s){
     }
 
     vector<pair<int, int> > tmp = andRes(t1, t2);
-    tmp = mergeRes(tmp , t1);
+    if (tmp.empty())
+        tmp = mergeRes(tmp, t2);
 
 
     priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > q;
