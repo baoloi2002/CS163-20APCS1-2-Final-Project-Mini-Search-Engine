@@ -20,20 +20,16 @@ avlNode* AvlTree::rightRot(avlNode* root){
     return b;
 }
 
-avlNode* AvlTree::insertNode(avlNode* root, int x){
+avlNode* AvlTree::insertNode(avlNode* root, int x) {
     if (root == nullptr){
         root = new avlNode(x);
         return root;
-    }
-    if (x == root->val){
+    } if (x == root->val){
         ++root->cnt;
         return root;
-    }
-    else
-    if (x > root->val)
+    } else if (x > root->val)
         root->right = insertNode(root->right, x);
-    else
-    if (x < root->val)
+    else if (x < root->val)
         root->left = insertNode(root->left, x);
     else
         return root;
@@ -44,15 +40,14 @@ avlNode* AvlTree::insertNode(avlNode* root, int x){
     if (balanceFactor > 1){     //LL case or LR case
         if (x < root->left->val)    //LL
             root = rightRot(root);
-        else{
+        else {
             root->left = leftRot(root->left);       //LR
             root = rightRot(root);
         }
-    }else
-    if (balanceFactor < -1){    //RR case or RL case
+    } else if (balanceFactor < -1){    //RR case or RL case
         if (x > root->right->val)
             root = leftRot(root);   //RR
-        else{
+        else {
             root->right = rightRot(root->right);    //RL
             root = leftRot(root);
         }
