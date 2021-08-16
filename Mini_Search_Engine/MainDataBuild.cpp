@@ -557,7 +557,7 @@ void MainDataBuild::MinusFind(string query){
     vector<string> a = splitString(query);
     vector<pair<int,int> > res, minusArr;
     vector<string> listStr;
-    for (int i=0, ii=a.size(); i<ii; ++i){
+    for (int i = 0; i < a.size(); ++i){
         if (a[i][0] == '-')
             minusArr = mergeRes(minusArr, trieMainData.find(a[i]));
         else{
@@ -568,9 +568,9 @@ void MainDataBuild::MinusFind(string query){
     res = minusRes(res, minusArr);
 
     priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > q;
-    for (int i = 0, ii = res.size(); i < ii; ++i){
+    for (int i = 0,; i < res.size(); ++i){
         q.push(mp(res[i].se, res[i].fi));
-        if (q.size() > 5)
+        if (q.size() > 5)   // choose top 5
             q.pop();
     }
 
@@ -583,26 +583,23 @@ void MainDataBuild::MinusFind(string query){
     display(ans, listStr);
 }
 
-vector<pair<int,int> > MainDataBuild::minusRes(vector<pair<int,int> > u, vector<pair<int,int> > v){
+vector<pair<int,int> > MainDataBuild::minusRes(vector<pair<int,int> > u, vector<pair<int,int> > v) {
     sort(u.begin(), u.end());
     sort(v.begin(), v.end());
-    int i=0, j=0, n = u.size(), m = v.size();
+    int i = 0, j = 0, n = u.size(), m = v.size();
     vector<pair<int,int> > res;
-    while(i < n || j < m){
+    while(i < n || j < m) {
         if (i == n){
             break;
-        }else
-        if (j == m){
+        } else if (j == m) {
             res.pb(u[i]);
             ++i;
-        }else
-        if (u[i].fi < v[j].fi){
+        } else if (u[i].fi < v[j].fi) {
             res.pb(u[i]);
             ++i;
-        }else
-        if (u[i].fi > v[j].fi){
+        } else if (u[i].fi > v[j].fi) {
             ++j;
-        }else{
+        } else{
             ++i, ++j;
         }
     }
