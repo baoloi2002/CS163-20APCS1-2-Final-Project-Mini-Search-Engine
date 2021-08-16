@@ -39,8 +39,8 @@ avlNode* AvlTree::insertNode(avlNode* root, int x){
         return root;
 
     root->height = max(getHeight(root->left), getHeight(root->right)) + 1;
-    int Balance = getBalance(root);
-    if (Balance > 1){
+    int balanceFactor = getBalance(root);
+    if (balanceFactor > 1){
         if (x < root->left->val)
             root = rightRot(root);
         else{
@@ -48,7 +48,7 @@ avlNode* AvlTree::insertNode(avlNode* root, int x){
             root = rightRot(root);
         }
     }else
-    if (Balance < -1){
+    if (balanceFactor < -1){
         if (x > root->right->val)
             root = leftRot(root);
         else{
