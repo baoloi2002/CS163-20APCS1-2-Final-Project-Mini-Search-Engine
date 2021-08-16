@@ -4,10 +4,10 @@ using namespace std;
 int typeOfQuestion(string str) {
     int len = (int) str.length() - 1;
 
-    for (int i=0, ii = str.size()-1; i<ii;++i)
-        if (str[i] == '.' && str[i+1] =='.')
+    for (int i = 0, ii = str.size() - 1; i < ii; ++i)
+        if (str[i] == '.' && str[i + 1] == '.')
             return 11;
-    for (int i=0, ii = str.size()-1; i<ii;++i)
+    for (int i = 0, ii = str.size() - 1; i < ii; ++i)
         if (str[i] == '$')
             return 7;
 
