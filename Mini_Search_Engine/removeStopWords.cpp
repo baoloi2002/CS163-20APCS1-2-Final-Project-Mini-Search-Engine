@@ -8,17 +8,17 @@ StopWords::StopWords(){
     fi.open("stopWord/stopword.txt");
     string s = "";
 
-    while(fi >> s && s!=""){    //read all stop words in file
+    while(fi >> s && s != "") {    //read all stop words in file
         insertData(s);
     }
 
     fi.close();
 }
 
-void StopWords::insertData(string u){   //insert nhu bth 
+void StopWords::insertData(string u) {   //insert nhu bth 
     swNode* cur = root;
     int v;
-    for (int i=0, ii=u.size(); i<ii; ++i){
+    for (int i = 0 ; i < u.size(); ++i) {
         v = int(u[i]);
         if (cur->pNext[v] == nullptr){
             cur->pNext[v] = new swNode();
@@ -28,12 +28,12 @@ void StopWords::insertData(string u){   //insert nhu bth
     cur->isEndOfWord = true;    //la stop word nen true
 }
 
-string StopWords::removeStopWords(string u){
+string StopWords::removeStopWords(string u) {
     string res = "";
     string s = "";
-    for (int i=0, ii=u.size(); i<ii; ++i){
+    for (int i = 0; i < u.size(); ++i) {
         if (isSplitChar(u[i])){
-            if (int(s.size()) > 0 && !isStopWord(s)){
+            if (int(s.size()) > 0 && !isStopWord(s)) {
                 if (res == "")
                     res = s;
                 else
@@ -41,10 +41,10 @@ string StopWords::removeStopWords(string u){
 
             }
             s = "";
-        }else
+        } else
             s.pb(u[i]);
     }
-    if (int(s.size()) > 0 && !isStopWord(s)){
+    if (int(s.size()) > 0 && !isStopWord(s)) { 
         if (res == "")
             res = s;
         else
@@ -56,7 +56,7 @@ string StopWords::removeStopWords(string u){
 bool StopWords::isStopWord(string u){
     swNode* cur = root;
     int v;
-    for (int i=0, ii=u.size(); i<ii; ++i){
+    for (int i = 0; i < u.size(); ++i){
         v = int(u[i]);
         if (cur->pNext[v] == nullptr){
             return false;
@@ -68,7 +68,7 @@ bool StopWords::isStopWord(string u){
 
 bool StopWords::isSplitChar(char u){
     vector<char> a = {' ', ',', '.', ';', '?', '!'};
-    for (int i=0, ii=a.size(); i<ii; ++i)
+    for (int i = 0; i < a.size(); ++i)
         if (a[i] == u)
         return true;
     return false;
