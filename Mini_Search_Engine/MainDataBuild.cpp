@@ -479,11 +479,11 @@ void MainDataBuild::WildcardFind(string s){
 
         vector<vector<int> > pos(n);
 
-        for (int i=0, ii=fileData.size(); i<ii; ++i){
-            for (int j=0; j<n; ++j)
-            if (i + int(query[j].size())-1 < ii){
+        for (int i = 0, ii = fileData.size(); i<ii; ++i){
+            for (int j = 0; j < n; ++j)
+            if (i + int(query[j].size()) - 1 < ii){
                 bool isDiff = false;
-                for (int k=0, kk=query[j].size(); k<kk; ++k)
+                for (int k = 0, kk = query[j].size(); k < kk; ++k)
                 if (query[j][k] != fileData[i+k]){
                     isDiff = true;
                     break;
@@ -509,11 +509,11 @@ void MainDataBuild::WildcardFind(string s){
                         if (len == 1) break;
                         ++k;
                         --len;
-                        do{
+                        do {
                             for (;optimizeStr(rawData[k]) != query[i].back(); ++k, --len)
                                 isHighlight[k] = true;
                             --len;
-                        }while(len>0);
+                        } while(len>0);
                         isHighlight[k] = true;
                         break;
                     }
