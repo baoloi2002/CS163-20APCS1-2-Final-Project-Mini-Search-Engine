@@ -290,3 +290,9 @@ mom
 city
 saigon
 membership
+#tuesday
+#throwback
+"biggest"
+largest
+'*'
+animal
