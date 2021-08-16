@@ -557,6 +557,7 @@ void MainDataBuild::MinusFind(string query){
     vector<string> a = splitString(query);
     vector<pair<int,int> > res, minusArr;
     vector<string> listStr;
+    // Phan loai + -
     for (int i = 0; i < a.size(); ++i){
         if (a[i][0] == '-')
             minusArr = mergeRes(minusArr, trieMainData.find(a[i]));
