@@ -127,8 +127,8 @@ void hashTableNode::saveDataToFile(){
 
 int hashTableNode::getKey(string u){
     int key = 0;
-    for (int i=0, ii=u.size(); i<ii; ++i)
-        key = (key*base + int(u[i])) % Nmax;
+    for (int i = 0, ii = u.size(); i < ii; ++i)
+        key = (key * base + int(u[i])) % Nmax;
     while(val[key] != "" && val[key] != u)
         key = (key + 1) % Nmax;
     if (val[key] == "")
@@ -142,9 +142,9 @@ bool cmpSeFi(const pair<int,int>& u, const pair<int,int>& v){
 
 void dataQueryNode::buildBest(){
     sort(best.begin(), best.end(), cmpSeFi);
-    for (int i=1, ii=best.size(); i<ii; ++i)
-        if (best[i].se == best[i-1].se){
-            best[i].fi = best[i-1].fi;
+    for (int i = 1, ii = best.size(); i < ii; ++i)
+        if (best[i].se == best[i - 1].se){
+            best[i].fi = best[i - 1].fi;
         }
     sort(best.begin(), best.end(), greater<pair<int,int> >());
     best.resize(unique(best.begin(), best.end()) - best.begin());
