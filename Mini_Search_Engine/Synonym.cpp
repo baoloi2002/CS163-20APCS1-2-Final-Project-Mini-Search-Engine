@@ -5,7 +5,7 @@ void Synonym::inputSynonymWords(synNode* &root) {
     synNode *chk1, *chk2;
     for (int i = 1; i < cnt; ++i) {
         root->Search(root, arr[i].key, chk1);
-        if (!chk1) {
+        if (chk1 == nullptr) {
             root->Insert(root, arr[i].key, arr[i].txt);
         }
         for (int j = i + 1; j <= cnt; ++j) {
@@ -13,8 +13,8 @@ void Synonym::inputSynonymWords(synNode* &root) {
             if (!chk2) {
                 root->Insert(root, arr[j].key, arr[j].txt);
             }
-            root->Update(root, arr[i].key, arr[j].key);
             root->Update(root, arr[j].key, arr[i].key);
+            root->Update(root, arr[i].key, arr[j].key);
         }
     }
 }
