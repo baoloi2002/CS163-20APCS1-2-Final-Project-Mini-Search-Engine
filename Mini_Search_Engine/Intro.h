@@ -6,7 +6,7 @@
 using namespace std;
 
 void RunIntro(){
-    cout << "            Welcome to mini search engine by team 7,     " << endl;
+    cout << "            Welcome to mini search engine by team 2,     " << endl;
     cout << "          there're also many options below, let's try:   " << endl;
     cout << "[01]. Word(s)  -----> SPACE ->   AND  -> SPACE -> Word(s)" << endl;
     cout << "[02]. Word(s)  -----> SPACE ->   OR   -> SPACE -> Word(s)" << endl;
