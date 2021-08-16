@@ -27,10 +27,8 @@ void WTWSuggest::add(string u, string v){
     fi.open(address.c_str());
     if (fi.is_open()){
         fi >> n;
-        int tmp;
-        string s;
-        for (int i=0; i<n; ++i){
-            fi >> tmp >> s;
+        for (int i = 0; i < n; ++i){
+            int tmp; string s; fi >> tmp >> s;
             a.push_back(mp(tmp, s));
         }
     }else{
@@ -39,12 +37,12 @@ void WTWSuggest::add(string u, string v){
     fi.close();
 
     bool isOk = true;
-    for (int i=0; i<n; ++i){
+    for (int i = 0; i < n; ++i){
         if (a[i].se == v){
             ++a[i].fi;
-            for (int j = i-1; j>=0; --j)
-                if (a[j].fi < a[j+1].fi)
-                    swap(a[j], a[j+1]);
+            for (int j = i - 1; j >= 0; --j)
+                if (a[j].fi < a[j + 1].fi)
+                    swap(a[j], a[j + 1]);
                 else
                     break;
             isOk = false;
@@ -58,7 +56,7 @@ void WTWSuggest::add(string u, string v){
     ofstream fo;
     fo.open(address.c_str());
     fo << n << endl;
-    for (int i=0; i<n; ++i){
+    for (int i = 0; i < n; ++i){
         fo << a[i].fi << ' ' << a[i].se << endl;
     }
     fo.close();
