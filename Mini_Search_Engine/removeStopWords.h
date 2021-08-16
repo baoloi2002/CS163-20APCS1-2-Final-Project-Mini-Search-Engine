@@ -10,7 +10,7 @@ using namespace std;
 
 class swNode{
     const int base = 130;
-    swNode** pNext;
+    swNode** pNext;     //giong trie
     bool isEndOfWord;
     swNode(){
         pNext = new swNode*[base];

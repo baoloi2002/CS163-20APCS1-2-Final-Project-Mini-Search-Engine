@@ -1,6 +1,6 @@
 #include "removeStopWords.h"
 
-StopWords::StopWords(){
+StopWords::StopWords(){     
 
     root = new swNode();
 
@@ -8,14 +8,14 @@ StopWords::StopWords(){
     fi.open("stopWord/stopword.txt");
     string s = "";
 
-    while(fi >> s && s!=""){
+    while(fi >> s && s!=""){    //read all stop words in file
         insertData(s);
     }
 
     fi.close();
 }
 
-void StopWords::insertData(string u){
+void StopWords::insertData(string u){   //insert nhu bth 
     swNode* cur = root;
     int v;
     for (int i=0, ii=u.size(); i<ii; ++i){
