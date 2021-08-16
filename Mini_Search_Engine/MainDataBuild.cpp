@@ -568,7 +568,7 @@ void MainDataBuild::MinusFind(string query){
     res = minusRes(res, minusArr);
 
     priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > q;
-    for (int i=0, ii = res.size(); i<ii; ++i){
+    for (int i = 0, ii = res.size(); i < ii; ++i){
         q.push(mp(res[i].se, res[i].fi));
         if (q.size() > 5)
             q.pop();
@@ -588,7 +588,7 @@ vector<pair<int,int> > MainDataBuild::minusRes(vector<pair<int,int> > u, vector<
     sort(v.begin(), v.end());
     int i=0, j=0, n = u.size(), m = v.size();
     vector<pair<int,int> > res;
-    while(i<n || j<m){
+    while(i < n || j < m){
         if (i == n){
             break;
         }else
