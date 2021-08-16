@@ -31,17 +31,16 @@ void StopWords::insertData(string u) {   //insert nhu bth
 string StopWords::removeStopWords(string u) {
     string res = "";
     string s = "";
-    for (int i = 0; i < u.size(); ++i) {
-        if (isSplitChar(u[i])){
+    for (int i = 0; i < u.size(); ++i) if (isSplitChar(u[i])){
             if (int(s.size()) > 0 && !isStopWord(s)) {
                 if (res == "")
                     res = s;
-                else
+                else {
                     res += " " + s;
-
+                }
             }
             s = "";
-        } else
+    } else {
             s.pb(u[i]);
     }
     if (int(s.size()) > 0 && !isStopWord(s)) { 
