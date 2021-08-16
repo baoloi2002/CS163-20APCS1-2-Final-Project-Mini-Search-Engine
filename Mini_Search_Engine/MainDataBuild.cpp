@@ -839,7 +839,7 @@ void MainDataBuild::HashTagFind(string s){
 }
 
 /// Price Find
-bool MainDataBuild::StrToNum(string query, int& u){
+bool MainDataBuild::StrToNum(string query, int& u) {
     u = 0;
     bool check = true;
     for (int i=0, ii=query.size(); i<ii; ++i){
@@ -854,7 +854,7 @@ bool MainDataBuild::StrToNum(string query, int& u){
 }
 
 
-void MainDataBuild::PriceFind(string s){
+void MainDataBuild::PriceFind(string s) {
     /*
     string query = optimizeStr(s);
     int u = 0;
@@ -870,7 +870,7 @@ void MainDataBuild::PriceFind(string s){
 
     vector<string> listStr = splitString(s);
     vector<pair<int,int> > t1, t2;/// t1 = num, t2 = normal
-    for (int i=0, ii=listStr.size(); i<ii; ++i){
+    for (int i = 0; i < listStr.size(); ++i){
         if (listStr[i][0] == '$'){
             int u = 0;
             bool check = StrToNum(optimizeStr(listStr[i]), u);
@@ -888,7 +888,7 @@ void MainDataBuild::PriceFind(string s){
 
 
     priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > q;
-    for (int i=0, ii = tmp.size(); i<ii; ++i){
+    for (int i = 0; i < tmp.size(); ++i){
         q.push(mp(tmp[i].se, tmp[i].fi));
         if (q.size() > 5)
             q.pop();
@@ -911,9 +911,9 @@ void MainDataBuild::PriceFind(string s){
 void MainDataBuild::RangPriceFind(string query){
     vector<string> listStr = splitString(query);
     vector<string> onlyW, onlyRange;
-    for (int i=0, ii=listStr.size(); i<ii; ++i){
+    for (int i = 0; i < listStr.size(); ++i){
         bool isRange = false;
-        for (int j=0, jj=listStr[i].size()-1; j < jj; ++j)
+        for (int j = 0; j < listStr[i].size()-1; ++j)
         if (listStr[i][j] == '.' && listStr[i][j+1] == '.'){
             isRange = true;
             break;
@@ -926,7 +926,7 @@ void MainDataBuild::RangPriceFind(string query){
     listStr.clear();
     string s;
     string sQuery = onlyRange.back();
-    for (int i=0, ii=sQuery.size(); i<ii; ++i){
+    for (int i = 0; i < sQuery.size(); ++i){
         if (sQuery[i] == '.'){
             if (s != "")
                 listStr.pb(s);
