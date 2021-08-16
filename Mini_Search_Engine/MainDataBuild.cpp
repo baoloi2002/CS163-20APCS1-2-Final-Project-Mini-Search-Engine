@@ -945,11 +945,11 @@ void MainDataBuild::RangPriceFind(string query){
         return;
     }
     vector<pair<int,int> > tmp;
-    tmp = PriceTree.getList(u,v);
+    tmp = PriceTree.getList(u, v);
 
 
     priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > q;
-    for (int i=0, ii = tmp.size(); i<ii; ++i){
+    for (int i = 0; i < tmp.size(); ++i){
         q.push(mp(tmp[i].se, tmp[i].fi));
         if (q.size() > 5)
             q.pop();
@@ -964,15 +964,15 @@ void MainDataBuild::RangPriceFind(string query){
     displayRange(res, u, v, onlyW);
 
 }
-void MainDataBuild::displayRange(vector<int> file, int L, int R, vector<string> onlyW){
-    if (file.empty()){
+void MainDataBuild::displayRange(vector<int> file, int L, int R, vector<string> onlyW) {
+    if (file.empty()) {
         cout << "NOTHING HERE !" << endl;
         return;
     }
     reverse(file.begin(), file.end());
 
     unordered_map<int, string> hQuery;// Luoi code qua
-    for (int i=0, ii=onlyW.size(); i<ii; ++i){
+    for (int i=0, ii=onlyW.size(); i<ii; ++i) {
         onlyW[i] = optimizeStr(onlyW[i]);
         hQuery[ hashingStr(onlyW[i]) ] = onlyW[i];
     }
