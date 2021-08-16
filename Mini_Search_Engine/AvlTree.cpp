@@ -88,7 +88,7 @@ vector<pair<int,int> > AvlTree::getList(){
     return res;
 }
 
-void AvlTree::loadAllTree(avlNode* root, vector<pair<int, int> >& res){
+void AvlTree::loadAllTree(avlNode* root, vector<pair<int, int> > &res){
     if (root == nullptr) return;
     loadAllTree(root->left, res);
     res.pb(mp(root->val, root->cnt));
