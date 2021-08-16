@@ -1,2 +1,4 @@
-1
+3
 2 eat
+1 AND
+1 -king

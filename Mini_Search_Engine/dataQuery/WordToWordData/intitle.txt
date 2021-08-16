@@ -1,4 +1,4 @@
-7
+9
 4 Fairy
 3 fairy
 2 hammer
@@ -6,3 +6,5 @@
 1 Fair
 1 Old
 1 Manchester-United
+1 Lion
+1 hunt

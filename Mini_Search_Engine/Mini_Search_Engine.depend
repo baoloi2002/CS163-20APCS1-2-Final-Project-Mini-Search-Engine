@@ -42,10 +42,10 @@
 1626367792 source:d:\github\cs163-20apcs1-2-final project-mini search engine\mini_search_engine\setconsolecursorposition.cpp
 	"SetConsoleCursorPosition.h"
 
-1627385805 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\dataquery.cpp
+1629101290 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\dataquery.cpp
 	"dataQuery.h"
 
-1627971538 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\dataquery.h
+1629101290 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\dataquery.h
 	"SetConsoleCursorPosition.h"
 	<fstream>
 	<vector>
@@ -53,12 +53,12 @@
 	<algorithm>
 	<iostream>
 
-1626367731 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\setconsolecursorposition.h
+1629101290 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\setconsolecursorposition.h
 	<stdio.h>
 	<conio.h>
 	<windows.h>
 
-1629000549 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\main.cpp
+1629101290 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\main.cpp
 	<iostream>
 	"Intro.h"
 	"Header.h"
@@ -71,7 +71,7 @@
 	"Synonym.h"
 	"MainDataBuild.h"
 
-1627544117 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.h
+1629101290 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.h
 	<vector>
 	<conio.h>
 	<windows.h>
@@ -84,31 +84,31 @@
 	"Header.h"
 	"WordToWord.h"
 
-1627970169 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\header.h
+1629101290 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\header.h
 	"dataQuery.h"
 	"WordToWord.h"
 	"Synonym.h"
 	"removeStopWords.h"
 	"MainDataBuild.h"
 
-1628934089 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.cpp
+1629101290 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.cpp
 	"readQuery.h"
 
-1626367792 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\setconsolecursorposition.cpp
+1629101290 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\setconsolecursorposition.cpp
 	"SetConsoleCursorPosition.h"
 
-1627959267 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\synonym.cpp
+1629101290 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\synonym.cpp
 	"Synonym.h"
 
-1628057783 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\synonym.h
+1629101290 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\synonym.h
 	<iostream>
 	<vector>
 	<fstream>
 
-1627544472 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\wordtoword.cpp
+1629101290 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\wordtoword.cpp
 	"WordToWord.h"
 
-1627544510 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\wordtoword.h
+1629101290 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\wordtoword.h
 	<vector>
 	<iostream>
 	<fstream>
@@ -122,10 +122,10 @@
 1627892152 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\stopwords.cpp
 	"stopWords.h"
 
-1628043608 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\typeofquestion.cpp
+1629101290 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\typeofquestion.cpp
 	"typeOfQuestion.h"
 
-1627891916 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\typeofquestion.h
+1629101290 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\typeofquestion.h
 	<iostream>
 
 1627847778 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\trie.h
@@ -177,11 +177,11 @@
 1627863608 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\solution12.cpp
 	<bits/stdc++.h>
 
-1627971561 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\removestopwords.h
+1629101290 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\removestopwords.h
 	<vector>
 	<fstream>
 
-1627892855 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\removestopwords.cpp
+1629101290 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\removestopwords.cpp
 	"removeStopWords.h"
 
 1627848410 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\stopwords.cpp
@@ -190,10 +190,10 @@
 1627868643 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\solution13.cpp
 	<bits/stdc++.h>
 
-1627961075 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\intro.h
+1629101290 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\intro.h
 	<iostream>
 
-1628498319 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\maindatabuild.h
+1629101290 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\maindatabuild.h
 	<vector>
 	<algorithm>
 	<iostream>
@@ -205,22 +205,22 @@
 	"removeStopWords.h"
 	<queue>
 
-1629044226 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\maindatabuild.cpp
+1629101290 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\maindatabuild.cpp
 	"MainDataBuild.h"
 	"Header.h"
 	<windows.h>
 
-1627974565 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\avltree.h
+1629101290 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\avltree.h
 	<fstream>
 	<vector>
 
-1627974442 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\avltree.cpp
+1629101290 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\avltree.cpp
 	"AvlTree.h"
 
-1628042062 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\avl_in_avl.cpp
+1629101290 source:d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\avl_in_avl.cpp
 	"AVL_in_AVL.h"
 
-1628042017 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\avl_in_avl.h
+1629101290 d:\github\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\avl_in_avl.h
 	"AvlTree.h"
 	<vector>
 	<algorithm>

@@ -272,3 +272,8 @@ united
 "~nice"
 team
 $
+Lion
+hunt
+mario
+$0
+-king
