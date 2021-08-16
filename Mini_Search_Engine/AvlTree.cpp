@@ -49,11 +49,11 @@ avlNode* AvlTree::insertNode(avlNode* root, int x){
             root = rightRot(root);
         }
     }else
-    if (balanceFactor < -1){
+    if (balanceFactor < -1){    //RR case or RL case
         if (x > root->right->val)
-            root = leftRot(root);
+            root = leftRot(root);   //RR
         else{
-            root->right = rightRot(root->right);
+            root->right = rightRot(root->right);    //RL
             root = leftRot(root);
         }
     }
