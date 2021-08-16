@@ -1,6 +1,6 @@
 #include "AvlTree.h"
 
-avlNode* AvlTree::leftRot(avlNode* root){
+avlNode* AvlTree::leftRot(avlNode* root) {
     avlNode* a = root,* b = root->right;
     avlNode* tmp = b->left;
     b->left = a;
@@ -10,7 +10,7 @@ avlNode* AvlTree::leftRot(avlNode* root){
     return b;
 }
 
-avlNode* AvlTree::rightRot(avlNode* root){
+avlNode* AvlTree::rightRot(avlNode* root) {
     avlNode* a = root,* b = root->left;
     avlNode* tmp = b->right;
     b->right = a;
@@ -35,6 +35,7 @@ avlNode* AvlTree::insertNode(avlNode* root, int x) {
         return root;
 
     root->height = max(getHeight(root->left), getHeight(root->right)) + 1;
+    
     //check if the tree is balanced
     int balanceFactor = getBalance(root); 
     if (balanceFactor > 1){     //LL case or LR case
@@ -56,19 +57,19 @@ avlNode* AvlTree::insertNode(avlNode* root, int x) {
     return root;
 }
 
-void AvlTree::printToFileInOrder(avlNode* root, ofstream& fo){  //L->node->R
+void AvlTree::printToFileInOrder(avlNode* root, ofstream& fo) {  //L->node->R
     if (root == nullptr) return;
     printToFileInOrder(root->left, fo);
     fo << root->val << ' ';
     printToFileInOrder(root->right, fo);
 }
 
-int AvlTree::getHeight(avlNode* root){
+int AvlTree::getHeight(avlNode* root) { 
     if (root == nullptr) return 0;
     return root->height;
 }
 
-int AvlTree::getBalance(avlNode* root){
+int AvlTree::getBalance(avlNode* root) {
     return getHeight(root->left) - getHeight(root->right);
 }
 
@@ -77,13 +78,13 @@ void AvlTree::insertData(int u){
     root = insertNode(root, u);
 }
 
-vector<pair<int,int> > AvlTree::getList(){
+vector<pair<int,int> > AvlTree::getList() {
     vector<pair<int, int> > res;
     loadAllTree(root, res);
     return res;
 }
 
-void AvlTree::loadAllTree(avlNode* root, vector<pair<int, int> > &res){
+void AvlTree::loadAllTree(avlNode* root, vector<pair<int, int> > &res) {
     if (root == nullptr) return;
     loadAllTree(root->left, res);
     res.pb(mp(root->val, root->cnt));
