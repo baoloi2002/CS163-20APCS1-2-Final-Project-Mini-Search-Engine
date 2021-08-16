@@ -637,7 +637,7 @@ void MainDataBuild::IntitleFind(string s){
             u = optimizeStr(u);
             for (int j=0, jj=listStr.size(); j<jj;++j)
             if (u == listStr[j]){
-                tmp[i].se += 20;
+                tmp[i].se += 50;
                 break;
             }
             --n;
@@ -711,7 +711,7 @@ void MainDataBuild::displayWithTitleCheck(vector<int> file, vector<string> query
             }
         }
 
-        int id = min(30, n-1), best = m, s=0;
+        int id = min(showRange, n-1), best = m+20, s=0;
         for (int j=0; j<n; ++j){
             if (isHighlight[j]) ++s;
             if (j>=showRange && isHighlight[j-showRange])
@@ -801,7 +801,7 @@ void MainDataBuild::FileTypeFind(string query){
     string u = "";
     int m = s.size();
     while(fi>>u && u!="" && cnt < 10){
-        if (u.substr(int(u.size()) - m, m) == s){
+        if (int(u.size()) > m && u.substr(int(u.size()) - m, m) == s){
             cout << u.substr(0, int(u.size())-m);
             ChangeTextColor(240);
             cout << s;

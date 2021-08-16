@@ -972,3 +972,5 @@ Data3430.txt
 Data3449.txt
 Data3452.txt
 Data3461.txt
+hashTag.inp
+output.out

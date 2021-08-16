@@ -277,3 +277,6 @@ hunt
 mario
 $0
 -king
+inp
+#conan
+Tories
