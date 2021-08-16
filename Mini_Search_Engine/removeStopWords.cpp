@@ -25,7 +25,7 @@ void StopWords::insertData(string u){   //insert nhu bth
         }
         cur = cur->pNext[v];
     }
-    cur->isEndOfWord = true;
+    cur->isEndOfWord = true;    //la stop word nen true
 }
 
 string StopWords::removeStopWords(string u){
