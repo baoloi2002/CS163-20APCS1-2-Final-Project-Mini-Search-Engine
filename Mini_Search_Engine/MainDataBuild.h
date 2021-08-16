@@ -63,7 +63,7 @@ public:
     bool isValidFile(string s);
     bool isValidString(string s);
     bool isValidChar(char u);
-    /// Normal find
+    // Finding option
     void NormalFind(string query);
 
     void SynonymFind(string query);

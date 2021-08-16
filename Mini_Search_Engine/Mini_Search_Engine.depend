@@ -239,7 +239,7 @@
 	<fstream>
 	<vector>
 
-1629115938 source:e:\cs163_proj\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\avltree.cpp
+1629118487 source:e:\cs163_proj\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\avltree.cpp
 	"AvlTree.h"
 
 1629116868 source:e:\cs163_proj\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\dataquery.cpp
@@ -291,11 +291,11 @@
 	<vector>
 	<fstream>
 
-1629115938 e:\cs163_proj\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\removestopwords.h
+1629118487 e:\cs163_proj\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\removestopwords.h
 	<vector>
 	<fstream>
 
-1629116684 e:\cs163_proj\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\maindatabuild.h
+1629119096 e:\cs163_proj\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\maindatabuild.h
 	<vector>
 	<algorithm>
 	<iostream>
@@ -331,7 +331,7 @@
 1629115938 source:e:\cs163_proj\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\readquery.cpp
 	"readQuery.h"
 
-1629115938 source:e:\cs163_proj\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\removestopwords.cpp
+1629118487 source:e:\cs163_proj\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\removestopwords.cpp
 	"removeStopWords.h"
 
 1629115938 source:e:\cs163_proj\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\setconsolecursorposition.cpp
@@ -340,7 +340,7 @@
 1629115938 source:e:\cs163_proj\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\synonym.cpp
 	"Synonym.h"
 
-1629115938 source:e:\cs163_proj\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\typeofquestion.cpp
+1629118487 source:e:\cs163_proj\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\typeofquestion.cpp
 	"typeOfQuestion.h"
 
 1629115938 source:e:\cs163_proj\cs163-20apcs1-2-final-project-mini-search-engine\mini_search_engine\wordtoword.cpp
