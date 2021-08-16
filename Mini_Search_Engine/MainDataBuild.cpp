@@ -818,11 +818,11 @@ void MainDataBuild::HashTagFind(string s){
     string query = stWords.removeStopWords(s);
     vector<string> listStr = splitString(query);
     vector<pair<int, int> > tmp;
-    for (int i=0, ii=listStr.size(); i<ii; ++i)
+    for (int i = 0; i < listStr.size(); ++i)
         tmp = mergeRes(tmp, hashTag.find(listStr[i]));
 
     priority_queue<pair<int,int>, vector<pair<int,int> >, greater<pair<int,int> > > q;
-    for (int i=0, ii = tmp.size(); i<ii; ++i){
+    for (int i = 0; i < tmp.size(); ++i) {
         q.push(mp(tmp[i].se, tmp[i].fi));
         if (q.size() > 5)
             q.pop();
