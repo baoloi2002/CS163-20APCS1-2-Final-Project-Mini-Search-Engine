@@ -39,12 +39,13 @@ avlNode* AvlTree::insertNode(avlNode* root, int x){
         return root;
 
     root->height = max(getHeight(root->left), getHeight(root->right)) + 1;
-    int balanceFactor = getBalance(root);
-    if (balanceFactor > 1){
-        if (x < root->left->val)
+    //check if the tree is balanced
+    int balanceFactor = getBalance(root); 
+    if (balanceFactor > 1){     //LL case or LR case
+        if (x < root->left->val)    //LL
             root = rightRot(root);
         else{
-            root->left = leftRot(root->left);
+            root->left = leftRot(root->left);       //LR
             root = rightRot(root);
         }
     }else
@@ -60,7 +61,7 @@ avlNode* AvlTree::insertNode(avlNode* root, int x){
     return root;
 }
 
-void AvlTree::printToFileInOrder(avlNode* root, ofstream& fo){
+void AvlTree::printToFileInOrder(avlNode* root, ofstream& fo){  //L->node->R
     if (root == nullptr) return;
     printToFileInOrder(root->left, fo);
     fo << root->val << ' ';
