@@ -20,7 +20,7 @@ struct synNode {
     synNode (const lld &hashValue, const string &str) {
         int sz = (int) str.length();
         wrd = new char[sz];
-        val = new lld [51];
+        val = new lld [55];
         val[0] = hashValue;
         height = synonym = 1;
         for (int i = 1; i < 51; ++i) {
