@@ -32,7 +32,7 @@ class Trie{
         AvlTree mapId;
         Node(){
             pNext = new Node*[base];
-            for (int i=0; i<base; ++i)
+            for (int i = 0; i < base; ++i)
                 pNext[i] = nullptr;
             isEndOfWord = false;
         }
