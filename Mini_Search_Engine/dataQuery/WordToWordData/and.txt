@@ -1,4 +1,4 @@
-24
+25
 7 quang"
 4 Quang
 4 time
@@ -23,3 +23,4 @@
 1 run
 1 king
 1 mom
+1 Ferb
