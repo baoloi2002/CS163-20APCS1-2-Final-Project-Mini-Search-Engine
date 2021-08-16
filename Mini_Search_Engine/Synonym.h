@@ -80,9 +80,10 @@ struct synNode {
             if (root->synonym == 51) {
                 return;
             }
-            for (int i = 1; i < root->synonym; ++i) if (root->val[i] == key) {
-                return;
-            }
+            for (int i = 1; i < root->synonym; ++i) 
+                if (root->val[i] == key) {
+                    return;
+                }
             root->val[root->synonym++] = key;
         } else if (val < root->val[0]) {
             Update(root->lef, val, key);
