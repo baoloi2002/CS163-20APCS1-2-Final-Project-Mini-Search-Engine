@@ -74,6 +74,21 @@ int main(){
         if (context == 13){
             mainData.NormalFind(s);
         }
+        cout << "Choose file to display: ";
+        string address;
+        cin >> address;
+        ifstream fi;
+        address = "Search Engine-Data/" + address;
+        fi.open(address);
+        if (fi.is_open()){
+            string tmp;
+            while(getline(fi, tmp)){
+                cout << tmp << endl;
+            }
+        }else{
+            cout << "Wrong name !" << endl;
+        }
+        fi.close();
     }while(true);
 
 
