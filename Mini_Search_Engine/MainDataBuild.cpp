@@ -580,7 +580,7 @@ void MainDataBuild::MinusFind(string query){
         ans.pb(q.top().se);
         q.pop();
     }
-
+    // in ra  kq
     display(ans, listStr);
 }
 
