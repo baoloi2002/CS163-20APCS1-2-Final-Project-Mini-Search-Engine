@@ -77,6 +77,7 @@ int main(){
         cout << "Choose file to display: ";
         string address;
         cin >> address;
+        cout << endl;
         ifstream fi;
         address = "Search Engine-Data/" + address;
         fi.open(address);
